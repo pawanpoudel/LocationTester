@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12B19" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="H2v-Ob-DhD">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
+    </dependencies>
+    <scenes>
+        <!--Testing Tools View Controller - Testing Tools-->
+        <scene sceneID="Sod-QG-xO5">
+            <objects>
+                <viewController storyboardIdentifier="MDTestingToolsViewController" id="TgG-9C-kvu" customClass="MDTestingToolsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k6m-22-9Z1">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="SqH-v3-lSv">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="TgG-9C-kvu" id="6D8-W6-hJ1"/>
+                                    <outlet property="delegate" destination="TgG-9C-kvu" id="uaO-ra-Uy2"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Testing Tools" id="UQy-RC-8Jg">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="JJs-n0-PKH">
+                            <connections>
+                                <action selector="revealMenu:" destination="TgG-9C-kvu" id="pdS-MR-hsd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="SqH-v3-lSv" id="Psf-Wt-Gtb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tW5-ct-8Bj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="104" y="-860"/>
+        </scene>
+        <!--Locate View Controller - Locate-->
+        <scene sceneID="FCi-rO-pkm">
+            <objects>
+                <viewController storyboardIdentifier="MDLocateViewController" id="fYD-9N-EQW" customClass="MDLocateViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d8v-Bl-Aef">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Locate" id="TPb-LV-tf8">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="bvV-17-gLR">
+                            <connections>
+                                <action selector="revealMenu:" destination="fYD-9N-EQW" id="DkB-ff-e0Z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="opW-8m-5uU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="104" y="-266"/>
+        </scene>
+        <!--Initial Sliding View Controller-->
+        <scene sceneID="OC6-i3-9aC">
+            <objects>
+                <viewController id="H2v-Ob-DhD" customClass="MDInitialSlidingViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IWW-TW-Yeo">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BIB-pv-C48" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1060" y="-271"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="hT3-9f-f8D">
+            <objects>
+                <viewController storyboardIdentifier="MDMenuViewController" id="WtD-ER-b6P" customClass="MDMenuViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eFI-i0-k2x">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="21G-mx-Yip">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="WtD-ER-b6P" id="2fw-HK-l3u"/>
+                                    <outlet property="delegate" destination="WtD-ER-b6P" id="64F-CL-WaN"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="menuTableView" destination="21G-mx-Yip" id="IUL-2J-Rti"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fzq-n8-Usy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-709" y="-271"/>
+        </scene>
+        <!--Sliding Navigation Controller-->
+        <scene sceneID="Xz5-EJ-kQT">
+            <objects>
+                <navigationController storyboardIdentifier="MDLocateNavController" id="wwU-NF-f1J" customClass="MDSlidingNavigationController" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="duh-uN-XXi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fYD-9N-EQW" kind="relationship" relationship="rootViewController" id="Oas-wg-sMR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sry-nu-KBJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-338" y="-266"/>
+        </scene>
+        <!--Sliding Navigation Controller-->
+        <scene sceneID="XNp-Bk-XEK">
+            <objects>
+                <navigationController storyboardIdentifier="MDTestingToolsNavController" id="D5D-ZO-9Iz" customClass="MDSlidingNavigationController" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lRA-zV-i8a">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="TgG-9C-kvu" kind="relationship" relationship="rootViewController" id="eW8-Bi-2QK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cHc-d7-FgT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-338" y="-860"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="ECSlidingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ECSlidingViewController.h"/>
+        </class>
+        <class className="MDInitialSlidingViewController" superclassName="ECSlidingViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MDInitialSlidingViewController.h"/>
+        </class>
+        <class className="MDLocateViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MDLocateViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="revealMenu:"/>
+            </relationships>
+        </class>
+        <class className="MDMenuViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MDMenuViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="menuTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="MDSlidingNavigationController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MDSlidingNavigationController.h"/>
+        </class>
+        <class className="MDTestingToolsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MDTestingToolsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="revealMenu:"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
