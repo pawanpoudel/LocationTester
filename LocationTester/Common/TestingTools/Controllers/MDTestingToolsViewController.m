@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 Mobile Defense Inc. All rights reserved.
 //
 
+
 #import "MDTestingToolsViewController.h"
-#import "ECSlidingViewController.h"
 #import "MDRecordTripViewController.h"
 #import "MDTripListViewController.h"
 
@@ -47,6 +47,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Testing Tools";
     
     // Add menu button
     UIBarButtonItem *navButton = [[UIBarButtonItem alloc] initWithTitle:@"Menu"
@@ -80,6 +81,11 @@
     [self.navigationController pushViewController:tripListViewController animated:YES];
 }
 
+- (void)locationSimulationSwitchValueChanged:(UISwitch *)locationSwitch {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:locationSwitch.on forKey:@"locationSimulationTurnedOn"];
+}
+
 #pragma mark - Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -102,6 +108,15 @@
     
     cell.textLabel.text = menuItem[@"text"];    
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    if (indexPath.section == 1) {
+        UISwitch *locationSimulationSwitch = [[UISwitch alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+        [locationSimulationSwitch addTarget:self
+                                     action:@selector(locationSimulationSwitchValueChanged:)
+                           forControlEvents:UIControlEventValueChanged];
+        
+        cell.accessoryView = locationSimulationSwitch;
+    }
     
     return cell;
 }

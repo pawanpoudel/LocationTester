@@ -16,5 +16,11 @@
 			<string>showTripList</string>
 		</dict>
 	</array>
+	<array>
+		<dict>
+			<key>text</key>
+			<string>Location Simulation</string>
+		</dict>
+	</array>
 </array>
 </plist>

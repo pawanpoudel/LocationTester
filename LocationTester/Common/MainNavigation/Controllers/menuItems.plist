@@ -8,7 +8,7 @@
 		<key>text</key>
 		<string>Locate</string>
 		<key>viewController</key>
-		<string>MDLocateViewController</string>
+		<string>MDLocationViewController</string>
 	</dict>
 	<dict>
 		<key>imageName</key>

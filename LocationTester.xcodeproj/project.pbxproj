@@ -22,7 +22,6 @@
 		159872611630A8AF0039F4E5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 159872401630A8AE0039F4E5 /* CoreData.framework */; };
 		159872691630A8AF0039F4E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 159872671630A8AF0039F4E5 /* InfoPlist.strings */; };
 		1598726C1630A8AF0039F4E5 /* LocationTesterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1598726B1630A8AF0039F4E5 /* LocationTesterTests.m */; };
-		159872921630AA5D0039F4E5 /* LocationTester.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1598727C1630AA5D0039F4E5 /* LocationTester.xcdatamodeld */; };
 		1598729C1630AA5D0039F4E5 /* MDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 159872911630AA5D0039F4E5 /* MDAppDelegate.m */; };
 		159872CC1630B2A10039F4E5 /* menuItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = 159872CB1630B2A10039F4E5 /* menuItems.plist */; };
 		159872CF1630B3980039F4E5 /* MDMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159872CE1630B3980039F4E5 /* MDMenuViewController.m */; };
@@ -30,9 +29,6 @@
 		159872D51630B44F0039F4E5 /* MDSlidingNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159872D41630B44F0039F4E5 /* MDSlidingNavigationController.m */; };
 		159872ED1630C45F0039F4E5 /* DebugLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 159872EC1630C45F0039F4E5 /* DebugLog.m */; };
 		159872FE1630D0D20039F4E5 /* MDDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 159872FD1630D0D20039F4E5 /* MDDataManager.m */; };
-		159873101630D35B0039F4E5 /* MDTrip.m in Sources */ = {isa = PBXBuildFile; fileRef = 1598730F1630D35B0039F4E5 /* MDTrip.m */; };
-		159873131630D3650039F4E5 /* MDLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 159873121630D3650039F4E5 /* MDLocation.m */; };
-		159873181630D6E70039F4E5 /* MDLocateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159873171630D6E70039F4E5 /* MDLocateViewController.m */; };
 		1598731E1630D8E10039F4E5 /* MDLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1598731D1630D8E10039F4E5 /* MDLocationManager.m */; };
 		159873201630DD0E0039F4E5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1598731F1630DD0D0039F4E5 /* CoreLocation.framework */; };
 		159873241630E6D60039F4E5 /* MDRecordTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159873231630E6D60039F4E5 /* MDRecordTripViewController.m */; };
@@ -52,6 +48,15 @@
 		15BC8DBF16313C6700937CE9 /* MDRecordTripViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15BC8DBE16313C6700937CE9 /* MDRecordTripViewController.xib */; };
 		15BC8DC116313D7700937CE9 /* MDTripListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15BC8DC016313D7700937CE9 /* MDTripListViewController.xib */; };
 		15BC8DC316313DE400937CE9 /* MDTripInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15BC8DC216313DE400937CE9 /* MDTripInfoViewController.xib */; };
+		15BC8DDB1631477800937CE9 /* tripInfoRowItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = 15BC8DD91631477800937CE9 /* tripInfoRowItems.plist */; };
+		15BC8DDC1631477800937CE9 /* tripInfoSectionItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = 15BC8DDA1631477800937CE9 /* tripInfoSectionItems.plist */; };
+		15BC8DE51631573500937CE9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15BC8DE41631573500937CE9 /* MapKit.framework */; };
+		15BC8DF21631805C00937CE9 /* MDLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15BC8DF11631805C00937CE9 /* MDLocationViewController.xib */; };
+		15BC8DF51631807100937CE9 /* MDLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BC8DF41631807100937CE9 /* MDLocationViewController.m */; };
+		15BC8E00163181D900937CE9 /* MDLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BC8DFB163181D900937CE9 /* MDLocation.m */; };
+		15BC8E01163181D900937CE9 /* MDMapPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BC8DFD163181D900937CE9 /* MDMapPoint.m */; };
+		15BC8E02163181D900937CE9 /* MDTrip.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BC8DFF163181D900937CE9 /* MDTrip.m */; };
+		15BC8E05163181F600937CE9 /* LocationTester.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15BC8E03163181F600937CE9 /* LocationTester.xcdatamodeld */; };
 		7092F8438A6044278DEBA08F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7143704226464E8C9523D899 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -84,7 +89,6 @@
 		159872681630A8AF0039F4E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1598726A1630A8AF0039F4E5 /* LocationTesterTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationTesterTests.h; sourceTree = "<group>"; };
 		1598726B1630A8AF0039F4E5 /* LocationTesterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationTesterTests.m; sourceTree = "<group>"; };
-		1598727D1630AA5D0039F4E5 /* LocationTester.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LocationTester.xcdatamodel; sourceTree = "<group>"; };
 		159872901630AA5D0039F4E5 /* MDAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDAppDelegate.h; sourceTree = "<group>"; };
 		159872911630AA5D0039F4E5 /* MDAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDAppDelegate.m; sourceTree = "<group>"; };
 		159872CB1630B2A10039F4E5 /* menuItems.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = menuItems.plist; sourceTree = "<group>"; };
@@ -98,12 +102,6 @@
 		159872EC1630C45F0039F4E5 /* DebugLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebugLog.m; sourceTree = "<group>"; };
 		159872FC1630D0D20039F4E5 /* MDDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDDataManager.h; sourceTree = "<group>"; };
 		159872FD1630D0D20039F4E5 /* MDDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDDataManager.m; sourceTree = "<group>"; };
-		1598730E1630D35B0039F4E5 /* MDTrip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTrip.h; sourceTree = "<group>"; };
-		1598730F1630D35B0039F4E5 /* MDTrip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTrip.m; sourceTree = "<group>"; };
-		159873111630D3650039F4E5 /* MDLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDLocation.h; sourceTree = "<group>"; };
-		159873121630D3650039F4E5 /* MDLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDLocation.m; sourceTree = "<group>"; };
-		159873161630D6E70039F4E5 /* MDLocateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDLocateViewController.h; sourceTree = "<group>"; };
-		159873171630D6E70039F4E5 /* MDLocateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDLocateViewController.m; sourceTree = "<group>"; };
 		1598731C1630D8E10039F4E5 /* MDLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDLocationManager.h; sourceTree = "<group>"; };
 		1598731D1630D8E10039F4E5 /* MDLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDLocationManager.m; sourceTree = "<group>"; };
 		1598731F1630DD0D0039F4E5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -128,6 +126,19 @@
 		15BC8DBE16313C6700937CE9 /* MDRecordTripViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDRecordTripViewController.xib; sourceTree = "<group>"; };
 		15BC8DC016313D7700937CE9 /* MDTripListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDTripListViewController.xib; sourceTree = "<group>"; };
 		15BC8DC216313DE400937CE9 /* MDTripInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDTripInfoViewController.xib; sourceTree = "<group>"; };
+		15BC8DD91631477800937CE9 /* tripInfoRowItems.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tripInfoRowItems.plist; sourceTree = "<group>"; };
+		15BC8DDA1631477800937CE9 /* tripInfoSectionItems.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tripInfoSectionItems.plist; sourceTree = "<group>"; };
+		15BC8DE41631573500937CE9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		15BC8DF11631805C00937CE9 /* MDLocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDLocationViewController.xib; sourceTree = "<group>"; };
+		15BC8DF31631807100937CE9 /* MDLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDLocationViewController.h; sourceTree = "<group>"; };
+		15BC8DF41631807100937CE9 /* MDLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDLocationViewController.m; sourceTree = "<group>"; };
+		15BC8DFA163181D900937CE9 /* MDLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDLocation.h; sourceTree = "<group>"; };
+		15BC8DFB163181D900937CE9 /* MDLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDLocation.m; sourceTree = "<group>"; };
+		15BC8DFC163181D900937CE9 /* MDMapPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDMapPoint.h; sourceTree = "<group>"; };
+		15BC8DFD163181D900937CE9 /* MDMapPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDMapPoint.m; sourceTree = "<group>"; };
+		15BC8DFE163181D900937CE9 /* MDTrip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTrip.h; sourceTree = "<group>"; };
+		15BC8DFF163181D900937CE9 /* MDTrip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTrip.m; sourceTree = "<group>"; };
+		15BC8E04163181F600937CE9 /* LocationTester.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LocationTester.xcdatamodel; sourceTree = "<group>"; };
 		7143704226464E8C9523D899 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB7B6FAE88F949A0B5282598 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -137,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15BC8DE51631573500937CE9 /* MapKit.framework in Frameworks */,
 				159873201630DD0E0039F4E5 /* CoreLocation.framework in Frameworks */,
 				1598723B1630A8AE0039F4E5 /* UIKit.framework in Frameworks */,
 				1598723D1630A8AE0039F4E5 /* Foundation.framework in Frameworks */,
@@ -183,6 +195,7 @@
 		159872391630A8AE0039F4E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				15BC8DE41631573500937CE9 /* MapKit.framework */,
 				7143704226464E8C9523D899 /* libPods.a */,
 				1598731F1630DD0D0039F4E5 /* CoreLocation.framework */,
 				1598723A1630A8AE0039F4E5 /* UIKit.framework */,
@@ -256,21 +269,9 @@
 			children = (
 				159872FC1630D0D20039F4E5 /* MDDataManager.h */,
 				159872FD1630D0D20039F4E5 /* MDDataManager.m */,
-				1598727B1630AA5D0039F4E5 /* Models */,
+				15BC8E03163181F600937CE9 /* LocationTester.xcdatamodeld */,
 			);
 			path = DataLayer;
-			sourceTree = "<group>";
-		};
-		1598727B1630AA5D0039F4E5 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				159873111630D3650039F4E5 /* MDLocation.h */,
-				159873121630D3650039F4E5 /* MDLocation.m */,
-				1598730E1630D35B0039F4E5 /* MDTrip.h */,
-				1598730F1630D35B0039F4E5 /* MDTrip.m */,
-				1598727C1630AA5D0039F4E5 /* LocationTester.xcdatamodeld */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		1598727E1630AA5D0039F4E5 /* MainNavigation */ = {
@@ -334,6 +335,7 @@
 		159873141630D6E60039F4E5 /* Location */ = {
 			isa = PBXGroup;
 			children = (
+				15BC8DF9163181D800937CE9 /* Models */,
 				159873151630D6E70039F4E5 /* Controllers */,
 				15987358163138FB0039F4E5 /* Views */,
 			);
@@ -343,14 +345,16 @@
 		159873151630D6E70039F4E5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				159873161630D6E70039F4E5 /* MDLocateViewController.h */,
-				159873171630D6E70039F4E5 /* MDLocateViewController.m */,
+				15BC8DF31631807100937CE9 /* MDLocationViewController.h */,
+				15BC8DF41631807100937CE9 /* MDLocationViewController.m */,
 				1598731C1630D8E10039F4E5 /* MDLocationManager.h */,
 				1598731D1630D8E10039F4E5 /* MDLocationManager.m */,
 				159873221630E6D60039F4E5 /* MDRecordTripViewController.h */,
 				159873231630E6D60039F4E5 /* MDRecordTripViewController.m */,
 				1598734A16310D1D0039F4E5 /* MDTripListViewController.h */,
 				1598734B16310D1D0039F4E5 /* MDTripListViewController.m */,
+				15BC8DDA1631477800937CE9 /* tripInfoSectionItems.plist */,
+				15BC8DD91631477800937CE9 /* tripInfoRowItems.plist */,
 				15987351163113360039F4E5 /* MDTripInfoViewController.h */,
 				15987352163113370039F4E5 /* MDTripInfoViewController.m */,
 			);
@@ -387,6 +391,7 @@
 		15987358163138FB0039F4E5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				15BC8DF11631805C00937CE9 /* MDLocationViewController.xib */,
 				15987359163139150039F4E5 /* MDLocateViewController.xib */,
 				15BC8DBE16313C6700937CE9 /* MDRecordTripViewController.xib */,
 				15BC8DC016313D7700937CE9 /* MDTripListViewController.xib */,
@@ -412,6 +417,19 @@
 				15BC8DBC16313BDA00937CE9 /* MDTestingToolsViewController.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		15BC8DF9163181D800937CE9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				15BC8DFA163181D900937CE9 /* MDLocation.h */,
+				15BC8DFB163181D900937CE9 /* MDLocation.m */,
+				15BC8DFC163181D900937CE9 /* MDMapPoint.h */,
+				15BC8DFD163181D900937CE9 /* MDMapPoint.m */,
+				15BC8DFE163181D900937CE9 /* MDTrip.h */,
+				15BC8DFF163181D900937CE9 /* MDTrip.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -505,6 +523,9 @@
 				15BC8DBF16313C6700937CE9 /* MDRecordTripViewController.xib in Resources */,
 				15BC8DC116313D7700937CE9 /* MDTripListViewController.xib in Resources */,
 				15BC8DC316313DE400937CE9 /* MDTripInfoViewController.xib in Resources */,
+				15BC8DDB1631477800937CE9 /* tripInfoRowItems.plist in Resources */,
+				15BC8DDC1631477800937CE9 /* tripInfoSectionItems.plist in Resources */,
+				15BC8DF21631805C00937CE9 /* MDLocationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,21 +575,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				159872491630A8AE0039F4E5 /* main.m in Sources */,
-				159872921630AA5D0039F4E5 /* LocationTester.xcdatamodeld in Sources */,
 				1598729C1630AA5D0039F4E5 /* MDAppDelegate.m in Sources */,
 				159872CF1630B3980039F4E5 /* MDMenuViewController.m in Sources */,
 				159872D21630B3FA0039F4E5 /* MDInitialSlidingViewController.m in Sources */,
 				159872D51630B44F0039F4E5 /* MDSlidingNavigationController.m in Sources */,
 				159872ED1630C45F0039F4E5 /* DebugLog.m in Sources */,
 				159872FE1630D0D20039F4E5 /* MDDataManager.m in Sources */,
-				159873101630D35B0039F4E5 /* MDTrip.m in Sources */,
-				159873131630D3650039F4E5 /* MDLocation.m in Sources */,
-				159873181630D6E70039F4E5 /* MDLocateViewController.m in Sources */,
 				1598731E1630D8E10039F4E5 /* MDLocationManager.m in Sources */,
 				159873241630E6D60039F4E5 /* MDRecordTripViewController.m in Sources */,
 				1598734C16310D1D0039F4E5 /* MDTripListViewController.m in Sources */,
 				15987353163113370039F4E5 /* MDTripInfoViewController.m in Sources */,
 				15BC8DB916313BC300937CE9 /* MDTestingToolsViewController.m in Sources */,
+				15BC8DF51631807100937CE9 /* MDLocationViewController.m in Sources */,
+				15BC8E00163181D900937CE9 /* MDLocation.m in Sources */,
+				15BC8E01163181D900937CE9 /* MDMapPoint.m in Sources */,
+				15BC8E02163181D900937CE9 /* MDTrip.m in Sources */,
+				15BC8E05163181F600937CE9 /* LocationTester.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -754,12 +776,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		1598727C1630AA5D0039F4E5 /* LocationTester.xcdatamodeld */ = {
+		15BC8E03163181F600937CE9 /* LocationTester.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				1598727D1630AA5D0039F4E5 /* LocationTester.xcdatamodel */,
+				15BC8E04163181F600937CE9 /* LocationTester.xcdatamodel */,
 			);
-			currentVersion = 1598727D1630AA5D0039F4E5 /* LocationTester.xcdatamodel */;
+			currentVersion = 15BC8E04163181F600937CE9 /* LocationTester.xcdatamodel */;
 			path = LocationTester.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -1,5 +1,5 @@
 //
-//  MDAppDelegate.h
+//  MDLocationViewController.h
 //  LocationTester
 //
 //  Created by PAWAN POUDEL on 10/18/12.
@@ -7,8 +7,8 @@
 //
 
 
-@interface MDAppDelegate : UIResponder <UIApplicationDelegate>
+#import <MapKit/MapKit.h>
 
-@property (strong, nonatomic) UIWindow *window;
+@interface MDLocationViewController : UIViewController <MKMapViewDelegate>
 
 @end

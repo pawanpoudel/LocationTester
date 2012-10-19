@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Mobile Defense Inc. All rights reserved.
 //
 
-#import "ECSlidingViewController.h"
+
 #import "MDSlidingNavigationController.h"
 #import "MDMenuViewController.h"
 

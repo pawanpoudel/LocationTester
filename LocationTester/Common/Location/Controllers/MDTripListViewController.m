@@ -66,10 +66,10 @@ UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>
     [self setupEditButton];
     [self fetchTrips];
     
-	// create a filtered list that will contain trips for the search results table.
+	// Create a filtered list that will contain trips for the search results table.
 	self.searchResultListContent = [NSMutableArray arrayWithCapacity:[[self.fetchedResultsController fetchedObjects] count]];
     
-	// restore search settings if they were saved in didReceiveMemoryWarning.
+	// Restore search settings if they were saved in didReceiveMemoryWarning.
     if (savedSearchTerm) {
         [self.searchDisplayController setActive:searchWasActive];
         [self.searchDisplayController.searchBar setSelectedScopeButtonIndex:savedScopeButtonIndex];
@@ -192,16 +192,16 @@ shouldReloadTableForSearchString:(NSString *)searchString
 	return cell;
 }
 
-//- (NSString *)tableView:(UITableView *)tableView
-//titleForHeaderInSection:(NSInteger)section
-//{
-//    if (tableView == self.searchDisplayController.searchResultsTableView) {
-//        return nil;
-//    }
-//    else {
-//        return [[[self.fetchedResultsController sections] objectAtIndex:section] name];
-//    }
-//}
+- (NSString *)tableView:(UITableView *)tableView
+titleForHeaderInSection:(NSInteger)section
+{
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return nil;
+    }
+    else {
+        return [[[self.fetchedResultsController sections] objectAtIndex:section] name];
+    }
+}
 
 - (void)tableView:(UITableView *)tableView
 commitEditingStyle:(UITableViewCellEditingStyle)editingStyle

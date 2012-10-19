@@ -7,8 +7,6 @@
 //
 
 
-#import "ECSlidingViewController.h"
-
 @interface MDMenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 - (void)reload;
