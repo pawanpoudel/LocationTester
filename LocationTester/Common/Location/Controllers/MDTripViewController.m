@@ -10,7 +10,7 @@
 #import "MDDataManager.h"
 #import "MDTrip.h"
 
-@interface MDTripViewController () {
+@interface MDTripViewController () <UITextFieldDelegate> {
     MDTrip *currentTrip;
 }
 
@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *stopRecordingTripButton;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property (weak, nonatomic) IBOutlet UILabel *latLongLabel;
+@property (weak, nonatomic) IBOutlet UITextField *tripNameTextField;
 
 @property (strong, nonatomic) MDLocationManager *locationManager;
 
@@ -46,6 +47,15 @@
     
     self.stopRecordingTripButton.enabled = NO;
     self.stopRecordingTripButton.alpha = 0.5f;
+    
+    self.tripNameTextField.enabled = NO;
+    self.tripNameTextField.alpha = 0.5f;
+}
+
+- (void)viewDidUnload {
+    currentTrip = nil;
+    [self setTripNameTextField:nil];
+    [super viewDidUnload];
 }
 
 #pragma mark - Actions
@@ -65,18 +75,24 @@
     self.stopRecordingTripButton.enabled = YES;
     self.stopRecordingTripButton.alpha = 1.0f;
     
+    self.tripNameTextField.enabled = NO;
+    self.tripNameTextField.alpha = 0.5f;    
+    
     self.statusLabel.text = @"Recording...";
     self.statusLabel.textColor = [UIColor redColor];
     
     [self setupTrip];
 }
 
-- (IBAction)stopRecording:(id)sender {    
+- (IBAction)stopRecording:(id)sender {
     self.startRecordingTripButton.enabled = YES;
     self.startRecordingTripButton.alpha = 1.0f;
     
     self.stopRecordingTripButton.enabled = NO;
     self.stopRecordingTripButton.alpha = 0.5f;
+    
+    self.tripNameTextField.enabled = YES;
+    self.tripNameTextField.alpha = 1.0f;
     
     self.statusLabel.text = @"Not Recording...";
     self.statusLabel.textColor = [UIColor darkGrayColor];
@@ -84,9 +100,38 @@
     [self.locationManager stopRecordingTrip];
     
     currentTrip.tripEndTime = [NSDate date];
+    currentTrip.name = [self getDefaultNameForTrip:currentTrip];
     [[MDDataManager sharedDataManager] saveContext];
     
-    currentTrip = nil;
+    self.tripNameTextField.text = currentTrip.name;
+}
+
+#pragma mark - UITextFieldDelegate methods
+
+- (NSString *)getDefaultNameForTrip:(MDTrip *)trip {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd--hh-mm-ss"];
+    
+    NSString *tripName = [NSString stringWithFormat:@"Trip_%@", [dateFormatter stringFromDate:trip.tripStartTime]];
+    return tripName;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    NSString *tripName = nil;
+    
+    if ([textField.text length] > 0) {
+        tripName = textField.text;
+    }
+    else {
+        tripName = [self getDefaultNameForTrip:currentTrip];
+    }
+    
+    textField.text = tripName;
+    currentTrip.name = tripName;
+    [[MDDataManager sharedDataManager] saveContext];
+    
+    return YES;
 }
 
 #pragma mark - MDLocationManager delegate methods
