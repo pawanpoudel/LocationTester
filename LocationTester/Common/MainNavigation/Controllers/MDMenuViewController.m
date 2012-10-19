@@ -28,7 +28,6 @@
     NSMutableArray *navItems = [NSMutableArray arrayWithContentsOfFile:path];
         
     _menuItems = [NSArray arrayWithArray:navItems];
-    DebugLog(@"_menuItems: %@", _menuItems);
     return _menuItems;
 }
 
@@ -71,6 +70,9 @@
     
     cell.detailTextLabel.text = [menuItem objectForKey:@"detailText"];
     cell.detailTextLabel.textColor = [UIColor whiteColor];
+    
+    cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bgMenuCell.png"]];
+    cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bgMenuCellHighlighted.png"]];
     
     return cell;
 }
