@@ -13,7 +13,10 @@
 @property (nonatomic, retain) NSDate * tripStartTime;
 @property (nonatomic, retain) NSDate * tripEndTime;
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString *uniqueID;
+
 @property (nonatomic, retain) NSSet *locations;
+
 @end
 
 @interface MDTrip (CoreDataGeneratedAccessors)

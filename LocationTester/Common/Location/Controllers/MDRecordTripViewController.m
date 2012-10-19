@@ -60,9 +60,25 @@
 
 #pragma mark - Actions
 
+- (NSString *)uniqueIdentifier {
+    /*
+     * This unique ID doesn't persist between multiple installs.
+     */
+    
+    CFUUIDRef uuid = CFUUIDCreate (kCFAllocatorDefault);
+    CFStringRef uuidString = CFUUIDCreateString (kCFAllocatorDefault, uuid);
+    NSString *uniqueID = (__bridge NSString *)uuidString;
+    
+    CFRelease(uuidString);
+    CFRelease(uuid);
+    
+    return uniqueID;
+}
+
 - (void)setupTrip {
     currentTrip = [[MDDataManager sharedDataManager] createTripEntity];
     currentTrip.tripStartTime = [NSDate date];
+    currentTrip.uniqueID = [self uniqueIdentifier];
     
     self.locationManager.trip = currentTrip;
     [self.locationManager startRecordingTrip];
