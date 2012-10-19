@@ -11,6 +11,9 @@
 #import "MDSlidingNavigationController.h"
 #import "MDTestingToolsViewController.h"
 
+NSString *kMDLocationSimulationTurnedOn = @"kMDLocationSimulationTurnedOn";
+NSString *kMDUniqueIDOfTripToSimulate =  @"kMDUniqueIDOfTripToSimulate";
+
 @interface MDAppDelegate()
 @property (strong, nonatomic) MDSlidingNavigationController *testingToolsNavController;
 @end
