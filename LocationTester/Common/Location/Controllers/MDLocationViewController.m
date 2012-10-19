@@ -73,6 +73,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 //    [self refreshLocation:nil];
+    [self.locationManager startUpdatingLocation];
 }
 
 - (void)viewDidUnload {
