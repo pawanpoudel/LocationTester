@@ -83,7 +83,7 @@
 
 - (void)locationSimulationSwitchValueChanged:(UISwitch *)locationSwitch {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setBool:locationSwitch.on forKey:@"locationSimulationTurnedOn"];
+    [defaults setBool:locationSwitch.on forKey:kMDLocationSimulationTurnedOn];
 }
 
 #pragma mark - Table view methods
@@ -115,6 +115,9 @@
                                      action:@selector(locationSimulationSwitchValueChanged:)
                            forControlEvents:UIControlEventValueChanged];
         
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        locationSimulationSwitch.on = [defaults boolForKey:kMDLocationSimulationTurnedOn];
+        
         cell.accessoryView = locationSimulationSwitch;
     }
     
@@ -122,7 +125,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *cellIdentifier = @"TestingToolMenuItemCell";
+    NSString *cellIdentifier = @"TestingToolsMenuItemCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
