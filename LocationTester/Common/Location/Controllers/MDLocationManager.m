@@ -126,6 +126,10 @@ typedef enum : NSUInteger {
     }
 }
 
+- (void)stopUpdatingLocation {
+    [self.locationManager stopUpdatingLocation];
+}
+
 - (void)saveTripDataForLocation:(CLLocation *)newLocation
                     oldLocation:(CLLocation *)oldLocation
 {
@@ -169,8 +173,8 @@ typedef enum : NSUInteger {
     }
     
     if (self.delegate) {
-        if ([self.delegate respondsToSelector:@selector(locationManager:didUpdateToLocation:)]) {
-            [self.delegate locationManager:self didUpdateToLocation:newLocation];
+        if ([self.delegate respondsToSelector:@selector(locationManager:didUpdateToLocation:fromLocation:)]) {
+            [self.delegate locationManager:self didUpdateToLocation:newLocation fromLocation:oldLocation];
         }
     }    
 }
