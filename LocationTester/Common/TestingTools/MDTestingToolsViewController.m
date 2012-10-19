@@ -1,6 +1,6 @@
 //
 //  MDTestingToolsViewController.m
-//  MobileDefense
+//  LocationTester
 //
 //  Created by PAWAN POUDEL on 10/18/12.
 //  Copyright (c) 2012 Mobile Defense Inc. All rights reserved.
@@ -8,6 +8,7 @@
 
 #import "MDTestingToolsViewController.h"
 #import "ECSlidingViewController.h"
+#import "MDTripViewController.h"
 
 @interface MDTestingToolsViewController() <UITableViewDataSource, UITableViewDelegate>
 
@@ -57,8 +58,9 @@
     [self.slidingViewController anchorTopViewTo:ECRight];
 }
 
-- (void)recordTrip {
-    
+- (void)showViewForRecordingTrip {
+    MDTripViewController *tripViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MDTripViewController"];
+    [self.navigationController pushViewController:tripViewController animated:YES];
 }
 
 #pragma mark - Table view methods
