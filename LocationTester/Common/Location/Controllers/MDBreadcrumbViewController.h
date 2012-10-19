@@ -1,5 +1,5 @@
 //
-//  MDLocationViewController.h
+//  MDBreadcrumbViewController.h
 //  LocationTester
 //
 //  Created by PAWAN POUDEL on 10/18/12.
@@ -9,6 +9,6 @@
 
 #import <MapKit/MapKit.h>
 
-@interface MDLocationViewController : UIViewController <MKMapViewDelegate>
+@interface MDBreadcrumbViewController : UIViewController <MKMapViewDelegate>
 
 @end

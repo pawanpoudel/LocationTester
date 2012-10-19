@@ -51,8 +51,8 @@
 		15BC8DDB1631477800937CE9 /* tripInfoRowItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = 15BC8DD91631477800937CE9 /* tripInfoRowItems.plist */; };
 		15BC8DDC1631477800937CE9 /* tripInfoSectionItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = 15BC8DDA1631477800937CE9 /* tripInfoSectionItems.plist */; };
 		15BC8DE51631573500937CE9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15BC8DE41631573500937CE9 /* MapKit.framework */; };
-		15BC8DF21631805C00937CE9 /* MDLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15BC8DF11631805C00937CE9 /* MDLocationViewController.xib */; };
-		15BC8DF51631807100937CE9 /* MDLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BC8DF41631807100937CE9 /* MDLocationViewController.m */; };
+		15BC8DF21631805C00937CE9 /* MDBreadcrumbViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15BC8DF11631805C00937CE9 /* MDBreadcrumbViewController.xib */; };
+		15BC8DF51631807100937CE9 /* MDBreadcrumbViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BC8DF41631807100937CE9 /* MDBreadcrumbViewController.m */; };
 		15BC8E00163181D900937CE9 /* MDLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BC8DFB163181D900937CE9 /* MDLocation.m */; };
 		15BC8E01163181D900937CE9 /* MDMapPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BC8DFD163181D900937CE9 /* MDMapPoint.m */; };
 		15BC8E02163181D900937CE9 /* MDTrip.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BC8DFF163181D900937CE9 /* MDTrip.m */; };
@@ -129,9 +129,9 @@
 		15BC8DD91631477800937CE9 /* tripInfoRowItems.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tripInfoRowItems.plist; sourceTree = "<group>"; };
 		15BC8DDA1631477800937CE9 /* tripInfoSectionItems.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tripInfoSectionItems.plist; sourceTree = "<group>"; };
 		15BC8DE41631573500937CE9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		15BC8DF11631805C00937CE9 /* MDLocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDLocationViewController.xib; sourceTree = "<group>"; };
-		15BC8DF31631807100937CE9 /* MDLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDLocationViewController.h; sourceTree = "<group>"; };
-		15BC8DF41631807100937CE9 /* MDLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDLocationViewController.m; sourceTree = "<group>"; };
+		15BC8DF11631805C00937CE9 /* MDBreadcrumbViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDBreadcrumbViewController.xib; sourceTree = "<group>"; };
+		15BC8DF31631807100937CE9 /* MDBreadcrumbViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDBreadcrumbViewController.h; sourceTree = "<group>"; };
+		15BC8DF41631807100937CE9 /* MDBreadcrumbViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDBreadcrumbViewController.m; sourceTree = "<group>"; };
 		15BC8DFA163181D900937CE9 /* MDLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDLocation.h; sourceTree = "<group>"; };
 		15BC8DFB163181D900937CE9 /* MDLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDLocation.m; sourceTree = "<group>"; };
 		15BC8DFC163181D900937CE9 /* MDMapPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDMapPoint.h; sourceTree = "<group>"; };
@@ -347,8 +347,8 @@
 		159873151630D6E70039F4E5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				15BC8DF31631807100937CE9 /* MDLocationViewController.h */,
-				15BC8DF41631807100937CE9 /* MDLocationViewController.m */,
+				15BC8DF31631807100937CE9 /* MDBreadcrumbViewController.h */,
+				15BC8DF41631807100937CE9 /* MDBreadcrumbViewController.m */,
 				1598731C1630D8E10039F4E5 /* MDLocationManager.h */,
 				1598731D1630D8E10039F4E5 /* MDLocationManager.m */,
 				159873221630E6D60039F4E5 /* MDRecordTripViewController.h */,
@@ -393,7 +393,7 @@
 		15987358163138FB0039F4E5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				15BC8DF11631805C00937CE9 /* MDLocationViewController.xib */,
+				15BC8DF11631805C00937CE9 /* MDBreadcrumbViewController.xib */,
 				15987359163139150039F4E5 /* MDLocateViewController.xib */,
 				15BC8DBE16313C6700937CE9 /* MDRecordTripViewController.xib */,
 				15BC8DC016313D7700937CE9 /* MDTripListViewController.xib */,
@@ -527,7 +527,7 @@
 				15BC8DC316313DE400937CE9 /* MDTripInfoViewController.xib in Resources */,
 				15BC8DDB1631477800937CE9 /* tripInfoRowItems.plist in Resources */,
 				15BC8DDC1631477800937CE9 /* tripInfoSectionItems.plist in Resources */,
-				15BC8DF21631805C00937CE9 /* MDLocationViewController.xib in Resources */,
+				15BC8DF21631805C00937CE9 /* MDBreadcrumbViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,7 +588,7 @@
 				1598734C16310D1D0039F4E5 /* MDTripListViewController.m in Sources */,
 				15987353163113370039F4E5 /* MDTripInfoViewController.m in Sources */,
 				15BC8DB916313BC300937CE9 /* MDTestingToolsViewController.m in Sources */,
-				15BC8DF51631807100937CE9 /* MDLocationViewController.m in Sources */,
+				15BC8DF51631807100937CE9 /* MDBreadcrumbViewController.m in Sources */,
 				15BC8E00163181D900937CE9 /* MDLocation.m in Sources */,
 				15BC8E01163181D900937CE9 /* MDMapPoint.m in Sources */,
 				15BC8E02163181D900937CE9 /* MDTrip.m in Sources */,

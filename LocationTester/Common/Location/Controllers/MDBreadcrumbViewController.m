@@ -1,5 +1,5 @@
 //
-//  MDLocationViewController.m
+//  MDBreadcrumbViewController.m
 //  LocationTester
 //
 //  Created by PAWAN POUDEL on 10/18/12.
@@ -7,19 +7,19 @@
 //
 
 
-#import "MDLocationViewController.h"
+#import "MDBreadcrumbViewController.h"
 #import "MDLocationManager.h"
 #import "MDMapPoint.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface MDLocationViewController ()
+@interface MDBreadcrumbViewController ()
 
 @property (strong, nonatomic) MDLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @end
 
-@implementation MDLocationViewController
+@implementation MDBreadcrumbViewController
 
 #pragma mark - Accessors
 
