@@ -1,9 +1,9 @@
 //
-//  FirstTopViewController.h
-//  ECSlidingViewController
+//  MDLocateViewController.h
+//  LocationTester
 //
-//  Created by Michael Enriquez on 1/23/12.
-//  Copyright (c) 2012 EdgeCase. All rights reserved.
+//  Created by PAWAN POUDEL on 10/18/12.
+//  Copyright (c) 2012 Mobile Defense Inc. All rights reserved.
 //
 
 #import <QuartzCore/QuartzCore.h>

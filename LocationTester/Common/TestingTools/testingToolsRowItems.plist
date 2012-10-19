@@ -7,7 +7,7 @@
 			<key>text</key>
 			<string>Record Trip</string>
 			<key>selector</key>
-			<string>recordTrip</string>
+			<string>showViewForRecordingTrip</string>
 		</dict>
 	</array>
 </array>

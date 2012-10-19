@@ -1,10 +1,11 @@
 //
 //  MDMenuViewController.m
-//  MobileDefense
+//  LocationTester
 //
-//  Created by Pawan Poudel on 5/18/12.
+//  Created by PAWAN POUDEL on 10/18/12.
 //  Copyright (c) 2012 Mobile Defense Inc. All rights reserved.
 //
+
 
 #import "MDMenuViewController.h"
 #import "MDSlidingNavigationController.h"
@@ -27,7 +28,6 @@
     NSMutableArray *navItems = [NSMutableArray arrayWithContentsOfFile:path];
         
     _menuItems = [NSArray arrayWithArray:navItems];
-    DebugLog(@"_menuItems: %@", _menuItems);
     return _menuItems;
 }
 
@@ -70,6 +70,9 @@
     
     cell.detailTextLabel.text = [menuItem objectForKey:@"detailText"];
     cell.detailTextLabel.textColor = [UIColor whiteColor];
+    
+    cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bgMenuCell.png"]];
+    cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bgMenuCellHighlighted.png"]];
     
     return cell;
 }
