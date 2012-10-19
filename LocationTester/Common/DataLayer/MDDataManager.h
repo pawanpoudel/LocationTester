@@ -11,6 +11,8 @@
 
 @interface MDDataManager : NSObject
 
+@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
 + (MDDataManager *)sharedDataManager;
 
 - (void)saveContext;
