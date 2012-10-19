@@ -51,6 +51,7 @@
     _locationManager = [[CLLocationManager alloc] init];
     _locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
     _locationManager.distanceFilter = kCLDistanceFilterNone;
+    _locationManager.purpose = @"Your current location is needed to record trips.";
     _locationManager.delegate = self;
     
     return _locationManager;
@@ -63,17 +64,18 @@
 - (void)stopRecordingTrip {
     self.locationUpdateStartTime = nil;
     [self.locationManager stopUpdatingLocation];
+    self.trip = nil;
     
 	if (self.delegate) {
         if ([self.delegate respondsToSelector:@selector(locationManagerDidStopRecordingTrip:)]) {
-            [self.delegate locationManagerDidStopRecordingTrip:[self.trip copy]];
+            [self.delegate locationManagerDidStopRecordingTrip:self];
         }
 	}
-    
-    self.trip = nil;
 }
 
-- (void)saveTripDataForLocation:(CLLocation *)newLocation oldLocation:(CLLocation *)oldLocation {
+- (void)saveTripDataForLocation:(CLLocation *)newLocation
+                    oldLocation:(CLLocation *)oldLocation
+{
     MDDataManager *dataManager = [MDDataManager sharedDataManager];    
     MDLocation *location = [dataManager createLocationEntity];
     
@@ -90,15 +92,26 @@
     [dataManager saveContext];
 }
 
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+- (void)locationManager:(CLLocationManager *)manager
+    didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation
+{
     if (newLocation == nil || newLocation.horizontalAccuracy < 0) {
         return;
     }   
     
     [self saveTripDataForLocation:newLocation oldLocation:oldLocation];
+    
+    if (self.delegate) {
+        if ([self.delegate respondsToSelector:@selector(locationManager:didUpdateToLocation:)]) {
+            [self.delegate locationManager:self didUpdateToLocation:newLocation];
+        }
+    }    
 }
 
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+- (void)locationManager:(CLLocationManager *)manager
+       didFailWithError:(NSError *)error
+{
     if (self.delegate != nil) {
         if ([self.delegate respondsToSelector:@selector(locationManager:didFailWithError:)]) {
             [self.delegate locationManager:self didFailWithError:error];

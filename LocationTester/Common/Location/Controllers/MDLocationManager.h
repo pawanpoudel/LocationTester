@@ -25,7 +25,8 @@
 @protocol MDLocationManagerDelegate <NSObject>
 
 @optional
-- (void)locationManagerDidStopRecordingTrip:(MDTrip *)trip;
+- (void)locationManagerDidStopRecordingTrip:(MDLocationManager *)locationManager;
+- (void)locationManager:(MDLocationManager *)locationManager didUpdateToLocation:(CLLocation *)newLocation;
 - (void)locationManager:(MDLocationManager *)locationManager didFailWithError:(NSError *)error;
 
 @end
