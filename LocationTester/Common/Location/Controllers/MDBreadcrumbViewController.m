@@ -5,14 +5,24 @@
 //  Created by PAWAN POUDEL on 10/18/12.
 //  Copyright (c) 2012 Mobile Defense Inc. All rights reserved.
 //
-
+//  Note: Code in locationManager:didUpdateToLocation:fromLocation:
+//  method is heavily borrowed from Apple's sample iOS project called
+//  Breadcrumb (http://developer.apple.com/library/ios/#samplecode/Breadcrumb/Introduction/Intro.html)
+//  Thank you Apple!
 
 #import "MDBreadcrumbViewController.h"
 #import "MDLocationManager.h"
 #import "MDMapPoint.h"
+#import "CrumbPath.h"
+#import "CrumbPathView.h"
+#import <MapKit/MapKit.h>
+
 #import <QuartzCore/QuartzCore.h>
 
-@interface MDBreadcrumbViewController ()
+@interface MDBreadcrumbViewController() <MKMapViewDelegate, MDLocationManagerDelegate> {
+    CrumbPath *crumbs;
+    CrumbPathView *crumbView;
+}
 
 @property (strong, nonatomic) MDLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -29,6 +39,7 @@
     }
     
     _locationManager = [[MDLocationManager alloc] init];
+    _locationManager.delegate = self;
     return _locationManager;
 }
 
@@ -51,12 +62,7 @@
     self.navigationItem.titleView = segmentedControl;
 }
 
-- (void)addBarButtons {
-    UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-                                                                                   target:self
-                                                                                   action:@selector(refreshLocation:)];
-    self.navigationItem.rightBarButtonItem = refreshButton;
-    
+- (void)addNavBarButtons {
     UIBarButtonItem *navButton = [[UIBarButtonItem alloc] initWithTitle:@"Menu"
                                                                   style:UIBarButtonItemStyleBordered
                                                                  target:self
@@ -67,17 +73,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addSegmentedControl];
-    [self addBarButtons];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-//    [self refreshLocation:nil];
+    [self addNavBarButtons];
     [self.locationManager startUpdatingLocation];
 }
 
 - (void)viewDidUnload {
     [self setMapView:nil];
+    [self.locationManager stopUpdatingLocation];
     [super viewDidUnload];
 }
 
@@ -138,96 +140,66 @@
     }
 }
 
-- (void)resetMapView {
-    // Zoom out
-    CLLocation *currentLocation = self.mapView.userLocation.location;
-    if (currentLocation != nil) {
-        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(currentLocation.coordinate, 25000, 25000);
-        [self.mapView setRegion:region animated:NO];        
-    }
-    
-    NSMutableArray *annotations = [NSMutableArray arrayWithArray:self.mapView.annotations];
-    
-    // Remove all annotations except the blue dot.    
-    for (NSInteger i = 0; i < annotations.count; i++) {
-        id <MKAnnotation> annotation = [annotations objectAtIndex:i];
-        if ([annotation isMemberOfClass:[MKUserLocation class]] == YES) {
-            [annotations removeObject:annotation];
+#pragma mark - MDLocationManager delegate methods
+
+- (void)locationManager:(MDLocationManager *)locationManager
+    didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation
+{
+    if (newLocation) {
+		// Make sure the old and new coordinates are different
+        if ((oldLocation.coordinate.latitude != newLocation.coordinate.latitude) &&
+            (oldLocation.coordinate.longitude != newLocation.coordinate.longitude))
+        {
+            if (crumbs == nil) {
+                // This is the first time we're getting a location update, so create
+                // the CrumbPath and add it to the map.
+                //
+                crumbs = [[CrumbPath alloc] initWithCenterCoordinate:newLocation.coordinate];
+                [self.mapView addOverlay:crumbs];
+                
+                // On the first location update only, zoom map to user location
+                MKCoordinateRegion region =
+                MKCoordinateRegionMakeWithDistance(newLocation.coordinate, 2000, 2000);
+                [self.mapView setRegion:region animated:YES];
+            }
+            else {
+                // This is a subsequent location update.
+                // If the crumbs MKOverlay model object determines that the current location has moved
+                // far enough from the previous location, use the returned updateRect to redraw just
+                // the changed area.
+                //
+                // note: iPhone 3G will locate you using the triangulation of the cell towers.
+                // so you may experience spikes in location data (in small time intervals)
+                // due to 3G tower triangulation.
+                //
+                MKMapRect updateRect = [crumbs addCoordinate:newLocation.coordinate];
+                
+                if (!MKMapRectIsNull(updateRect)) {
+                    
+                    // There is a non null update rect.
+                    // Compute the currently visible map zoom scale
+                    MKZoomScale currentZoomScale = (CGFloat)(self.mapView.bounds.size.width / self.mapView.visibleMapRect.size.width);
+                    
+                    // Find out the line width at this zoom scale and outset the updateRect by that amount
+                    CGFloat lineWidth = MKRoadWidthAtZoomScale(currentZoomScale);
+                    updateRect = MKMapRectInset(updateRect, -lineWidth, -lineWidth);
+                    
+                    // Ask the overlay view to update just the changed area.
+                    [crumbView setNeedsDisplayInMapRect:updateRect];
+                }
+            }
         }
     }
-    
-    [self.mapView removeAnnotations:annotations];
 }
-
-//- (void)refreshLocation:(id)sender {
-//    [self resetMapView];
-//    
-//    [[MDAppDelegate sharedAppDelegate] showProgressIndicator:@"Locating..."];
-//    
-//    [self.locationManager updateStreetAddressWithCompletionHandler:
-//     ^(CLLocation *newLocation, CLPlacemark *newPlacemark, NSError *error) {         
-//         [[MDAppDelegate sharedAppDelegate] hideProgressIndicator];
-//         
-//         if (newPlacemark != nil) {
-//             NSString *title = [self getAddressFromPlacemark:newPlacemark];
-//             NSString *subTitle = [NSString stringWithFormat:@"Accurate to %d meters", newLocation.horizontalAccuracy];
-//             
-//             MDMapPoint *mapPoint = [[MDMapPoint alloc] initWithCoordinate:newLocation.coordinate 
-//                                                                     title:title 
-//                                                                  subtitle:subTitle];
-//             [self.mapView addAnnotation:mapPoint];
-//             
-//             // Zoom map to user's location
-//             MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(newLocation.coordinate, 250, 250);
-//             [self.mapView setRegion:region animated:YES];
-//         }
-//         else {
-//             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"We're Sorry" 
-//                                                                 message:@"Your location couldn't be retrieved at this time. Please try again later."
-//                                                                delegate:nil
-//                                                       cancelButtonTitle:@"OK"
-//                                                       otherButtonTitles:nil];
-//             [alertView show];
-//         }
-//         
-//        // Upload device's location to the server
-//        [self.locationManager uploadLocation:newLocation];
-//     }];
-//}
 
 #pragma mark - MKMapView delegate methods
 
-- (MKAnnotationView *)mapView:(MKMapView *)aMapView 
-            viewForAnnotation:(id <MKAnnotation>)annotation {
-    
-    // If it's the user location managed by the map view, return nil
-    // so that a blue dot will be displayed.
-    if ([annotation isKindOfClass:[MKUserLocation class]]) {
-        return nil;    
+- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay {
+    if (crumbView == nil) {
+        crumbView = [[CrumbPathView alloc] initWithOverlay:overlay];
     }
-    
-    static NSString *DefaultAnnotationView = @"DefaultAnnotationView";
-    MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[aMapView dequeueReusableAnnotationViewWithIdentifier:DefaultAnnotationView];  
-    
-    if (annotationView == nil) {
-        annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation 
-                                                         reuseIdentifier:DefaultAnnotationView];
-    }
-    
-    annotationView.pinColor = MKPinAnnotationColorRed;
-    annotationView.canShowCallout = YES;
-    annotationView.animatesDrop = YES;
-    
-    annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];    
-    return annotationView;
-}
-
-- (void)mapView:(MKMapView *)mapView
- annotationView:(MKAnnotationView *)view
-calloutAccessoryControlTapped:(UIControl *)control {
-    
-    
-    
+    return crumbView;
 }
 
 @end

@@ -6,9 +6,6 @@
 //  Copyright (c) 2012 Mobile Defense Inc. All rights reserved.
 //
 
-
-#import <MapKit/MapKit.h>
-
-@interface MDBreadcrumbViewController : UIViewController <MKMapViewDelegate>
+@interface MDBreadcrumbViewController : UIViewController
 
 @end

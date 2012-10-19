@@ -57,8 +57,8 @@
 		15BC8E01163181D900937CE9 /* MDMapPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BC8DFD163181D900937CE9 /* MDMapPoint.m */; };
 		15BC8E02163181D900937CE9 /* MDTrip.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BC8DFF163181D900937CE9 /* MDTrip.m */; };
 		15BC8E05163181F600937CE9 /* LocationTester.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15BC8E03163181F600937CE9 /* LocationTester.xcdatamodeld */; };
-		15FED0B11631B6980086DFB9 /* CrumbPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FED0AE1631B6980086DFB9 /* CrumbPath.m */; };
-		15FED0B21631B6980086DFB9 /* CrumbPathView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FED0B01631B6980086DFB9 /* CrumbPathView.m */; };
+		15FED0B11631B6980086DFB9 /* CrumbPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FED0AE1631B6980086DFB9 /* CrumbPath.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		15FED0B21631B6980086DFB9 /* CrumbPathView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FED0B01631B6980086DFB9 /* CrumbPathView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7092F8438A6044278DEBA08F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7143704226464E8C9523D899 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -414,8 +414,8 @@
 			children = (
 				15BC8DB416313BC300937CE9 /* MDTestingToolsViewController.h */,
 				15BC8DB516313BC300937CE9 /* MDTestingToolsViewController.m */,
-				15BC8DB616313BC300937CE9 /* testingToolsRowItems.plist */,
 				15BC8DB716313BC300937CE9 /* testingToolsSectionItems.plist */,
+				15BC8DB616313BC300937CE9 /* testingToolsRowItems.plist */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
