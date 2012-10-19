@@ -9,6 +9,12 @@
 			<key>selector</key>
 			<string>showViewForRecordingTrip</string>
 		</dict>
+		<dict>
+			<key>text</key>
+			<string>View Recorded Trips</string>
+			<key>selector</key>
+			<string>showTripList</string>
+		</dict>
 	</array>
 </array>
 </plist>

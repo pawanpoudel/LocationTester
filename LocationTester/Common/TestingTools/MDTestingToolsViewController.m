@@ -8,7 +8,8 @@
 
 #import "MDTestingToolsViewController.h"
 #import "ECSlidingViewController.h"
-#import "MDTripViewController.h"
+#import "MDRecordTripViewController.h"
+#import "MDTripListViewController.h"
 
 @interface MDTestingToolsViewController() <UITableViewDataSource, UITableViewDelegate>
 
@@ -59,8 +60,13 @@
 }
 
 - (void)showViewForRecordingTrip {
-    MDTripViewController *tripViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MDTripViewController"];
+    MDRecordTripViewController *tripViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MDRecordTripViewController"];
     [self.navigationController pushViewController:tripViewController animated:YES];
+}
+
+- (void)showTripList {
+    MDTripListViewController *tripListViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MDTripListViewController"];
+    [self.navigationController pushViewController:tripListViewController animated:YES];
 }
 
 #pragma mark - Table view methods
