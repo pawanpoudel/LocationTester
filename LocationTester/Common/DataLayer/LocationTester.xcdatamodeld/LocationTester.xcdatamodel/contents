@@ -8,12 +8,14 @@
         <relationship name="trip" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="MDTrip" inverseName="locations" inverseEntity="MDTrip" syncable="YES"/>
     </entity>
     <entity name="MDTrip" representedClassName="MDTrip" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tripEndTime" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="tripStartTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="uniqueID" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="locations" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="MDLocation" inverseName="trip" inverseEntity="MDLocation" syncable="YES"/>
     </entity>
     <elements>
-        <element name="MDTrip" positionX="160" positionY="192" width="128" height="90"/>
         <element name="MDLocation" positionX="160" positionY="192" width="128" height="120"/>
+        <element name="MDTrip" positionX="160" positionY="192" width="128" height="120"/>
     </elements>
 </model>

@@ -11,6 +11,8 @@
 
 @interface MDDataManager : NSObject
 
+@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
 + (MDDataManager *)sharedDataManager;
 
 - (void)saveContext;
@@ -20,6 +22,8 @@
 - (MDTrip *)createTripEntity;
 
 - (NSArray *)fetchTrips;
+- (MDTrip *)fetchTripWithID:(NSString *)tripID;
+
 - (void)deleteTrips;
 
 @end

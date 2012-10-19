@@ -13,7 +13,6 @@
 
 @interface MDDataManager()
 
-@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
@@ -44,11 +43,13 @@
 #pragma mark - Create operations
 
 - (MDLocation *)createLocationEntity {
-    return [NSEntityDescription insertNewObjectForEntityForName:@"MDLocation" inManagedObjectContext:self.managedObjectContext];
+    return [NSEntityDescription insertNewObjectForEntityForName:@"MDLocation"
+                                         inManagedObjectContext:self.managedObjectContext];
 }
 
 - (MDTrip *)createTripEntity {
-    return [NSEntityDescription insertNewObjectForEntityForName:@"MDTrip" inManagedObjectContext:self.managedObjectContext];
+    return [NSEntityDescription insertNewObjectForEntityForName:@"MDTrip"
+                                         inManagedObjectContext:self.managedObjectContext];
 }
 
 #pragma mark - Fetch Operations
@@ -67,6 +68,17 @@
     }
     
     return trips;
+}
+
+- (MDTrip *)fetchTripWithID:(NSString *)tripID {
+    NSArray *allTrips = [self fetchTrips];
+    for (MDTrip *trip in allTrips) {
+        if ([trip.uniqueID isEqualToString:tripID]) {
+            return trip;
+        }
+    }
+    
+    return nil;
 }
 
 #pragma mark - Delete operations

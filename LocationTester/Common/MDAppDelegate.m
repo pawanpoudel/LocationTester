@@ -9,9 +9,28 @@
 #import "MDAppDelegate.h"
 #import "MDInitialSlidingViewController.h"
 #import "MDSlidingNavigationController.h"
-#import "MDLocateViewController.h"
+#import "MDTestingToolsViewController.h"
+
+NSString *kMDLocationSimulationTurnedOn = @"kMDLocationSimulationTurnedOn";
+NSString *kMDUniqueIDOfTripToSimulate =  @"kMDUniqueIDOfTripToSimulate";
+
+@interface MDAppDelegate()
+@property (strong, nonatomic) MDSlidingNavigationController *testingToolsNavController;
+@end
 
 @implementation MDAppDelegate
+
+#pragma mark - Accessors
+
+- (MDSlidingNavigationController *)testingToolsNavController {
+    if (_testingToolsNavController) {
+        return _testingToolsNavController;
+    }
+    
+    MDTestingToolsViewController *testingToolsViewController = [[MDTestingToolsViewController alloc] init];
+    _testingToolsNavController = [[MDSlidingNavigationController alloc] initWithRootViewController:testingToolsViewController];
+    return _testingToolsNavController;
+}
 
 #pragma mark - Convenience methods
 
@@ -22,17 +41,15 @@
 #pragma mark - App lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    ECSlidingViewController *slidingViewController = (ECSlidingViewController *)self.window.rootViewController;
-    UIStoryboard *storyboard;
     
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        storyboard = [UIStoryboard storyboardWithName:@"MainiPhone" bundle:nil];
-    }
-    else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        storyboard = [UIStoryboard storyboardWithName:@"MainiPad" bundle:nil];
-    }
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
     
-    slidingViewController.topViewController = [storyboard instantiateViewControllerWithIdentifier:@"MDLocateNavController"];    
+    MDInitialSlidingViewController *slidingViewController = [[MDInitialSlidingViewController alloc] init];
+    slidingViewController.topViewController = self.testingToolsNavController;
+    self.window.rootViewController = slidingViewController;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
