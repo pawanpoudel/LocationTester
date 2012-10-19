@@ -35,6 +35,9 @@
 		159872E71630BA200039F4E5 /* testingToolsRowItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = 159872E41630BA200039F4E5 /* testingToolsRowItems.plist */; };
 		159872E81630BA200039F4E5 /* testingToolsSectionItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = 159872E51630BA200039F4E5 /* testingToolsSectionItems.plist */; };
 		159872ED1630C45F0039F4E5 /* DebugLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 159872EC1630C45F0039F4E5 /* DebugLog.m */; };
+		159872FE1630D0D20039F4E5 /* MDDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 159872FD1630D0D20039F4E5 /* MDDataManager.m */; };
+		159873101630D35B0039F4E5 /* MDTrip.m in Sources */ = {isa = PBXBuildFile; fileRef = 1598730F1630D35B0039F4E5 /* MDTrip.m */; };
+		159873131630D3650039F4E5 /* MDLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 159873121630D3650039F4E5 /* MDLocation.m */; };
 		7092F8438A6044278DEBA08F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7143704226464E8C9523D899 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +90,12 @@
 		159872E51630BA200039F4E5 /* testingToolsSectionItems.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = testingToolsSectionItems.plist; sourceTree = "<group>"; };
 		159872EB1630C45F0039F4E5 /* DebugLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugLog.h; sourceTree = "<group>"; };
 		159872EC1630C45F0039F4E5 /* DebugLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebugLog.m; sourceTree = "<group>"; };
+		159872FC1630D0D20039F4E5 /* MDDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDDataManager.h; sourceTree = "<group>"; };
+		159872FD1630D0D20039F4E5 /* MDDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDDataManager.m; sourceTree = "<group>"; };
+		1598730E1630D35B0039F4E5 /* MDTrip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTrip.h; sourceTree = "<group>"; };
+		1598730F1630D35B0039F4E5 /* MDTrip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTrip.m; sourceTree = "<group>"; };
+		159873111630D3650039F4E5 /* MDLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDLocation.h; sourceTree = "<group>"; };
+		159873121630D3650039F4E5 /* MDLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDLocation.m; sourceTree = "<group>"; };
 		7143704226464E8C9523D899 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB7B6FAE88F949A0B5282598 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -209,6 +218,8 @@
 		1598727A1630AA5D0039F4E5 /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
+				159872FC1630D0D20039F4E5 /* MDDataManager.h */,
+				159872FD1630D0D20039F4E5 /* MDDataManager.m */,
 				1598727B1630AA5D0039F4E5 /* Models */,
 			);
 			path = DataLayer;
@@ -217,6 +228,10 @@
 		1598727B1630AA5D0039F4E5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				159873111630D3650039F4E5 /* MDLocation.h */,
+				159873121630D3650039F4E5 /* MDLocation.m */,
+				1598730E1630D35B0039F4E5 /* MDTrip.h */,
+				1598730F1630D35B0039F4E5 /* MDTrip.m */,
 				1598727C1630AA5D0039F4E5 /* LocationTester.xcdatamodeld */,
 			);
 			path = Models;
@@ -423,6 +438,9 @@
 				159872D51630B44F0039F4E5 /* MDSlidingNavigationController.m in Sources */,
 				159872E61630BA200039F4E5 /* MDTestingToolsViewController.m in Sources */,
 				159872ED1630C45F0039F4E5 /* DebugLog.m in Sources */,
+				159872FE1630D0D20039F4E5 /* MDDataManager.m in Sources */,
+				159873101630D35B0039F4E5 /* MDTrip.m in Sources */,
+				159873131630D3650039F4E5 /* MDLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
