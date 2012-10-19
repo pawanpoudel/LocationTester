@@ -1,5 +1,5 @@
 //
-//  MDTripViewController.h
+//  MDRecordTripViewController.h
 //  LocationTester
 //
 //  Created by PAWAN POUDEL on 10/18/12.
@@ -8,6 +8,6 @@
 
 #import "MDLocationManager.h"
 
-@interface MDTripViewController : UIViewController <MDLocationManagerDelegate>
+@interface MDRecordTripViewController : UIViewController <MDLocationManagerDelegate>
 
 @end

@@ -1,16 +1,16 @@
 //
-//  MDTripViewController.m
+//  MDRecordTripViewController.m
 //  LocationTester
 //
 //  Created by PAWAN POUDEL on 10/18/12.
 //  Copyright (c) 2012 Mobile Defense Inc. All rights reserved.
 //
 
-#import "MDTripViewController.h"
+#import "MDRecordTripViewController.h"
 #import "MDDataManager.h"
 #import "MDTrip.h"
 
-@interface MDTripViewController () <UITextFieldDelegate> {
+@interface MDRecordTripViewController () <UITextFieldDelegate> {
     MDTrip *currentTrip;
 }
 
@@ -24,7 +24,7 @@
 
 @end
 
-@implementation MDTripViewController
+@implementation MDRecordTripViewController
 
 #pragma mark - Accessors
 
