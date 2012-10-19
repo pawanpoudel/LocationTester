@@ -24,7 +24,6 @@
 		1598726C1630A8AF0039F4E5 /* LocationTesterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1598726B1630A8AF0039F4E5 /* LocationTesterTests.m */; };
 		159872921630AA5D0039F4E5 /* LocationTester.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1598727C1630AA5D0039F4E5 /* LocationTester.xcdatamodeld */; };
 		1598729C1630AA5D0039F4E5 /* MDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 159872911630AA5D0039F4E5 /* MDAppDelegate.m */; };
-		159872BD1630AE8B0039F4E5 /* MDLocateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159872AB1630AE8B0039F4E5 /* MDLocateViewController.m */; };
 		159872C91630AFAD0039F4E5 /* MainiPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 159872C71630AFAD0039F4E5 /* MainiPhone.storyboard */; };
 		159872CA1630AFAD0039F4E5 /* MainiPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 159872C81630AFAD0039F4E5 /* MainiPad.storyboard */; };
 		159872CC1630B2A10039F4E5 /* menuItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = 159872CB1630B2A10039F4E5 /* menuItems.plist */; };
@@ -38,6 +37,9 @@
 		159872FE1630D0D20039F4E5 /* MDDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 159872FD1630D0D20039F4E5 /* MDDataManager.m */; };
 		159873101630D35B0039F4E5 /* MDTrip.m in Sources */ = {isa = PBXBuildFile; fileRef = 1598730F1630D35B0039F4E5 /* MDTrip.m */; };
 		159873131630D3650039F4E5 /* MDLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 159873121630D3650039F4E5 /* MDLocation.m */; };
+		159873181630D6E70039F4E5 /* MDLocateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159873171630D6E70039F4E5 /* MDLocateViewController.m */; };
+		1598731E1630D8E10039F4E5 /* MDLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1598731D1630D8E10039F4E5 /* MDLocationManager.m */; };
+		159873201630DD0E0039F4E5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1598731F1630DD0D0039F4E5 /* CoreLocation.framework */; };
 		7092F8438A6044278DEBA08F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7143704226464E8C9523D899 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -73,8 +75,6 @@
 		1598727D1630AA5D0039F4E5 /* LocationTester.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LocationTester.xcdatamodel; sourceTree = "<group>"; };
 		159872901630AA5D0039F4E5 /* MDAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDAppDelegate.h; sourceTree = "<group>"; };
 		159872911630AA5D0039F4E5 /* MDAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDAppDelegate.m; sourceTree = "<group>"; };
-		159872AA1630AE8B0039F4E5 /* MDLocateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDLocateViewController.h; sourceTree = "<group>"; };
-		159872AB1630AE8B0039F4E5 /* MDLocateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDLocateViewController.m; sourceTree = "<group>"; };
 		159872C71630AFAD0039F4E5 /* MainiPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainiPhone.storyboard; sourceTree = "<group>"; };
 		159872C81630AFAD0039F4E5 /* MainiPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainiPad.storyboard; sourceTree = "<group>"; };
 		159872CB1630B2A10039F4E5 /* menuItems.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = menuItems.plist; sourceTree = "<group>"; };
@@ -96,6 +96,11 @@
 		1598730F1630D35B0039F4E5 /* MDTrip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTrip.m; sourceTree = "<group>"; };
 		159873111630D3650039F4E5 /* MDLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDLocation.h; sourceTree = "<group>"; };
 		159873121630D3650039F4E5 /* MDLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDLocation.m; sourceTree = "<group>"; };
+		159873161630D6E70039F4E5 /* MDLocateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDLocateViewController.h; sourceTree = "<group>"; };
+		159873171630D6E70039F4E5 /* MDLocateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDLocateViewController.m; sourceTree = "<group>"; };
+		1598731C1630D8E10039F4E5 /* MDLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDLocationManager.h; sourceTree = "<group>"; };
+		1598731D1630D8E10039F4E5 /* MDLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDLocationManager.m; sourceTree = "<group>"; };
+		1598731F1630DD0D0039F4E5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		7143704226464E8C9523D899 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB7B6FAE88F949A0B5282598 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -105,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				159873201630DD0E0039F4E5 /* CoreLocation.framework in Frameworks */,
 				1598723B1630A8AE0039F4E5 /* UIKit.framework in Frameworks */,
 				1598723D1630A8AE0039F4E5 /* Foundation.framework in Frameworks */,
 				1598723F1630A8AE0039F4E5 /* CoreGraphics.framework in Frameworks */,
@@ -150,12 +156,13 @@
 		159872391630A8AE0039F4E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7143704226464E8C9523D899 /* libPods.a */,
+				1598731F1630DD0D0039F4E5 /* CoreLocation.framework */,
 				1598723A1630A8AE0039F4E5 /* UIKit.framework */,
 				1598723C1630A8AE0039F4E5 /* Foundation.framework */,
 				1598723E1630A8AE0039F4E5 /* CoreGraphics.framework */,
 				159872401630A8AE0039F4E5 /* CoreData.framework */,
 				1598725D1630A8AF0039F4E5 /* SenTestingKit.framework */,
-				7143704226464E8C9523D899 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -207,6 +214,7 @@
 			children = (
 				159872901630AA5D0039F4E5 /* MDAppDelegate.h */,
 				159872911630AA5D0039F4E5 /* MDAppDelegate.m */,
+				159873141630D6E60039F4E5 /* Location */,
 				159872E91630C45E0039F4E5 /* Utils */,
 				159872D91630BA000039F4E5 /* TestingTools */,
 				1598727A1630AA5D0039F4E5 /* DataLayer */,
@@ -256,8 +264,6 @@
 				159872D41630B44F0039F4E5 /* MDSlidingNavigationController.m */,
 				159872CD1630B3980039F4E5 /* MDMenuViewController.h */,
 				159872CE1630B3980039F4E5 /* MDMenuViewController.m */,
-				159872AA1630AE8B0039F4E5 /* MDLocateViewController.h */,
-				159872AB1630AE8B0039F4E5 /* MDLocateViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -297,6 +303,25 @@
 				159872EC1630C45F0039F4E5 /* DebugLog.m */,
 			);
 			path = Logging;
+			sourceTree = "<group>";
+		};
+		159873141630D6E60039F4E5 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				159873151630D6E70039F4E5 /* Controllers */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		159873151630D6E70039F4E5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				159873161630D6E70039F4E5 /* MDLocateViewController.h */,
+				159873171630D6E70039F4E5 /* MDLocateViewController.m */,
+				1598731C1630D8E10039F4E5 /* MDLocationManager.h */,
+				1598731D1630D8E10039F4E5 /* MDLocationManager.m */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,7 +457,6 @@
 				159872491630A8AE0039F4E5 /* main.m in Sources */,
 				159872921630AA5D0039F4E5 /* LocationTester.xcdatamodeld in Sources */,
 				1598729C1630AA5D0039F4E5 /* MDAppDelegate.m in Sources */,
-				159872BD1630AE8B0039F4E5 /* MDLocateViewController.m in Sources */,
 				159872CF1630B3980039F4E5 /* MDMenuViewController.m in Sources */,
 				159872D21630B3FA0039F4E5 /* MDInitialSlidingViewController.m in Sources */,
 				159872D51630B44F0039F4E5 /* MDSlidingNavigationController.m in Sources */,
@@ -441,6 +465,8 @@
 				159872FE1630D0D20039F4E5 /* MDDataManager.m in Sources */,
 				159873101630D35B0039F4E5 /* MDTrip.m in Sources */,
 				159873131630D3650039F4E5 /* MDLocation.m in Sources */,
+				159873181630D6E70039F4E5 /* MDLocateViewController.m in Sources */,
+				1598731E1630D8E10039F4E5 /* MDLocationManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

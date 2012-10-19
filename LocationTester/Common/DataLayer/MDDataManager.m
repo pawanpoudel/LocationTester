@@ -1,5 +1,5 @@
 //
-//  DataManager.m
+//  MDDataManager.m
 //  LocationTester
 //
 //  Created by PAWAN POUDEL on 10/18/12.
