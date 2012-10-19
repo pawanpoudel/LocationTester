@@ -6,9 +6,9 @@
 		<key>imageName</key>
 		<string></string>
 		<key>text</key>
-		<string>Locate</string>
+		<string>Location Breadcrumb</string>
 		<key>viewController</key>
-		<string>MDLocationViewController</string>
+		<string>MDBreadcrumbViewController</string>
 	</dict>
 	<dict>
 		<key>imageName</key>

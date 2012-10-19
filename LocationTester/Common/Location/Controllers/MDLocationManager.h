@@ -21,6 +21,7 @@
 - (void)stopRecordingTrip;
 
 - (void)startUpdatingLocation;
+- (void)stopUpdatingLocation;
 
 @end
 
@@ -28,7 +29,12 @@
 
 @optional
 - (void)locationManagerDidStopRecordingTrip:(MDLocationManager *)locationManager;
-- (void)locationManager:(MDLocationManager *)locationManager didUpdateToLocation:(CLLocation *)newLocation;
-- (void)locationManager:(MDLocationManager *)locationManager didFailWithError:(NSError *)error;
+
+- (void)locationManager:(MDLocationManager *)locationManager
+    didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation;
+
+- (void)locationManager:(MDLocationManager *)locationManager
+       didFailWithError:(NSError *)error;
 
 @end

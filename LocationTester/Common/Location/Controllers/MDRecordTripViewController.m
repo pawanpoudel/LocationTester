@@ -152,7 +152,10 @@
 
 #pragma mark - MDLocationManager delegate methods
 
-- (void)locationManager:(MDLocationManager *)locationManager didUpdateToLocation:(CLLocation *)newLocation {
+- (void)locationManager:(MDLocationManager *)locationManager
+    didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation
+{
     if (newLocation) {
         NSString *format = @"Latitude: %+.5f\nLongitude: %+.5f\nHorizontal Accuracy: %+.5f\n";
         
@@ -167,7 +170,9 @@
     self.latLongLabel.text = @"Latitude, longitude and horizontal accuracy will be displayed here.";
 }
 
-- (void)locationManager:(MDLocationManager *)locationManager didFailWithError:(NSError *)error {
+- (void)locationManager:(MDLocationManager *)locationManager
+       didFailWithError:(NSError *)error
+{
     DebugLog(@"Error occurred while retrieving location data. Error: %@, %@", error, [error userInfo]);
 }
 
