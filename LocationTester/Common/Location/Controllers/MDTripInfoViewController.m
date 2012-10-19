@@ -1,24 +1,24 @@
 //
-//  MDTestingToolsViewController.m
+//  MDTripInfoViewController.m
 //  LocationTester
 //
-//  Created by PAWAN POUDEL on 10/18/12.
+//  Created by PAWAN POUDEL on 10/19/12.
 //  Copyright (c) 2012 Mobile Defense Inc. All rights reserved.
 //
 
-#import "MDTestingToolsViewController.h"
-#import "ECSlidingViewController.h"
-#import "MDTripViewController.h"
+#import "MDTripInfoViewController.h"
+#import "MDTrip.h"
 
-@interface MDTestingToolsViewController() <UITableViewDataSource, UITableViewDelegate>
+@interface MDTripInfoViewController () <UITableViewDataSource, UITableViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *rowItems;
 @property (strong, nonatomic) NSArray *sectionItems;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSMutableArray *tripAttributeValues;
 
 @end
 
-@implementation MDTestingToolsViewController
+@implementation MDTripInfoViewController
 
 #pragma mark - Accessors
 
@@ -27,7 +27,7 @@
         return _rowItems;
     }
     
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"testingToolsRowItems" ofType:@"plist"];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"tripInfoRowItems" ofType:@"plist"];
     _rowItems = [NSArray arrayWithContentsOfFile:filePath];
     return _rowItems;
 }
@@ -37,12 +37,41 @@
         return _sectionItems;
     }
     
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"testingToolsSectionItems" ofType:@"plist"];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"tripInfoSectionItems" ofType:@"plist"];
     _sectionItems = [NSArray arrayWithContentsOfFile:filePath];
     return _sectionItems;
 }
 
+- (NSMutableArray *)tripAttributeValues {
+    if (_tripAttributeValues) {
+        return _tripAttributeValues;
+    }
+    
+    _tripAttributeValues = [@[] mutableCopy];
+    return _tripAttributeValues;
+}
+
 #pragma mark - View lifecycle
+
+- (void)buildTripKeyValues {
+    NSEntityDescription *entity = [self.trip entity];
+    NSDictionary *attributes = [entity attributesByName];
+    
+    [[attributes allKeys] enumerateObjectsUsingBlock:^(NSString *attributeName, NSUInteger index, BOOL *stop) {
+        SEL selector = NSSelectorFromString(attributeName);
+        id attributeValue = [self.trip performSelector:selector];
+        
+        NSString *attributeDescription = [attributeValue description];
+        self.tripAttributeValues[index] = attributeDescription;
+    }];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.title = @"Trip Info";
+    [self buildTripKeyValues];
+}
 
 - (void)viewDidUnload {
     [self setRowItems:nil];
@@ -58,12 +87,12 @@
     [self.slidingViewController anchorTopViewTo:ECRight];
 }
 
-- (void)showViewForRecordingTrip {
-    MDTripViewController *tripViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MDTripViewController"];
-    [self.navigationController pushViewController:tripViewController animated:YES];
+- (void)useTripForReplay {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:self.trip.uniqueID forKey:kMDUniqueIDOfTripToSimulate];
 }
 
-#pragma mark - Table view methods
+#pragma mark - Table View methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.rowItems.count;
@@ -83,8 +112,14 @@
     
     cell.imageView.image = [UIImage imageNamed:menuItem[@"imageName"]];
     
-    cell.textLabel.text = menuItem[@"text"];    
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.textLabel.text = menuItem[@"text"];
+    if (indexPath.section == 0) {
+        cell.detailTextLabel.text = self.tripAttributeValues[indexPath.row];
+    }
+    else {
+        cell.detailTextLabel.text = menuItem[@"detailText"];
+        cell.detailTextLabel.textAlignment = UITextAlignmentCenter;
+    }
     
     return cell;
 }
@@ -93,7 +128,7 @@
     NSString *cellIdentifier = @"TestingToolMenuItemCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:cellIdentifier];
     }
     
     return [self configureCell:cell atIndexPath:indexPath];
@@ -108,7 +143,6 @@
     }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
- }
+}
 
 @end
-

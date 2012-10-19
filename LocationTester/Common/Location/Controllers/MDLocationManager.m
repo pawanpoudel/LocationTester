@@ -11,37 +11,23 @@
 #import "MDTrip.h"
 #import "MDLocation.h"
 
+typedef enum : NSUInteger {
+    MDLocationRecordingMode,
+    MDLocationSimulationMode,
+    MDLocationNormalMode
+} MDLocationMode;
+
 @interface MDLocationManager()
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
-@property (nonatomic, strong) NSDate *locationUpdateStartTime;
+@property (nonatomic) MDLocationMode locationMode;
+@property (nonatomic) MDDataManager *dataManager;
 
-- (void)saveTripDataForLocation:(CLLocation *)newLocation
-                    oldLocation:(CLLocation *)oldLocation;
 @end
 
 @implementation MDLocationManager
 
 #pragma mark - Accessors
-
-- (NSDate *)locationUpdateStartTime {
-    if (_locationUpdateStartTime != nil) {
-        return _locationUpdateStartTime;
-    }
-    
-    _locationUpdateStartTime = [NSDate date];
-    return _locationUpdateStartTime;
-}
-
-#pragma mark - Clean up
-
-- (void)dealloc {
-    [[self locationManager] setDelegate:nil];
-    _trip = nil;
-    _locationUpdateStartTime = nil;
-}
- 
-#pragma mark - Location methods
 
 - (CLLocationManager *)locationManager {
     if (_locationManager != nil) {
@@ -57,12 +43,25 @@
     return _locationManager;
 }
 
+- (MDDataManager *)dataManager {
+    return [MDDataManager sharedDataManager];
+}
+
+#pragma mark - Clean up
+
+- (void)dealloc {
+    self.locationManager.delegate = nil;
+    _trip = nil;
+}
+ 
+#pragma mark - Location methods
+
 - (void)startRecordingTrip {
+    self.locationMode = MDLocationRecordingMode;
     [[self locationManager] startUpdatingLocation];
 }
 
 - (void)stopRecordingTrip {
-    self.locationUpdateStartTime = nil;
     [self.locationManager stopUpdatingLocation];
     self.trip = nil;
     
@@ -71,6 +70,60 @@
             [self.delegate locationManagerDidStopRecordingTrip:self];
         }
 	}
+}
+
+- (void)updateLocationWithTrip:(MDTrip *)trip {
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timestamp" ascending:YES];
+    NSArray *sortedLocations = [[trip.locations allObjects] sortedArrayUsingDescriptors:@[sortDescriptor]];
+    
+    CLLocation *newLocation = nil;
+    CLLocation *oldLocation = nil;
+    
+    for (MDLocation *location in sortedLocations) {
+        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([location.latitude doubleValue],
+                                                                       [location.longitude doubleValue]);
+        
+        newLocation = [[CLLocation alloc] initWithCoordinate:coordinate
+                                                    altitude:0
+                                          horizontalAccuracy:[location.horizontalAccuracy doubleValue]
+                                            verticalAccuracy:-1
+                                                   timestamp:location.timestamp];
+        
+        [self locationManager:self.locationManager
+          didUpdateToLocation:newLocation
+                 fromLocation:oldLocation];
+        
+        oldLocation = newLocation;
+    }    
+}
+
+- (void)startUpdatingLocation {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    BOOL isLocationSimulationOn = [defaults boolForKey:kMDLocationSimulationTurnedOn];
+    
+    if (isLocationSimulationOn) {
+        self.locationMode = MDLocationSimulationMode;
+        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString *tripID = [defaults objectForKey:kMDUniqueIDOfTripToSimulate];
+        
+        if (IsEmpty(tripID)) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Trip missing"
+                                                                message:@"Looks like you forgot to select a trip to simulate."
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+            [alertView show];
+            return;
+        }
+        
+        MDTrip *trip = [self.dataManager fetchTripWithID:tripID];
+        [self updateLocationWithTrip:trip];
+    }
+    else {
+        self.locationMode = MDLocationNormalMode;
+        [self.locationManager startUpdatingLocation];
+    }
 }
 
 - (void)saveTripDataForLocation:(CLLocation *)newLocation
@@ -98,9 +151,22 @@
 {
     if (newLocation == nil || newLocation.horizontalAccuracy < 0) {
         return;
-    }   
+    }
     
-    [self saveTripDataForLocation:newLocation oldLocation:oldLocation];
+    switch (self.locationMode) {
+        case MDLocationRecordingMode:
+            [self saveTripDataForLocation:newLocation oldLocation:oldLocation];
+            break;
+            
+        case MDLocationSimulationMode:
+            break;
+        
+        case MDLocationNormalMode:
+            break;
+            
+        default:
+            break;
+    }
     
     if (self.delegate) {
         if ([self.delegate respondsToSelector:@selector(locationManager:didUpdateToLocation:)]) {

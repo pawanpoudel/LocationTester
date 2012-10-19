@@ -6,7 +6,8 @@
 //  Copyright (c) 2012 Mobile Defense Inc. All rights reserved.
 //
 
-#import "ECSlidingViewController.h"
+extern NSString *kMDLocationSimulationTurnedOn;
+extern NSString *kMDUniqueIDOfTripToSimulate;
 
 @interface MDAppDelegate : UIResponder <UIApplicationDelegate>
 

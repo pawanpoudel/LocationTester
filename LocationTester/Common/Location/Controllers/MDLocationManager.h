@@ -20,6 +20,8 @@
 - (void)startRecordingTrip;
 - (void)stopRecordingTrip;
 
+- (void)startUpdatingLocation;
+
 @end
 
 @protocol MDLocationManagerDelegate <NSObject>

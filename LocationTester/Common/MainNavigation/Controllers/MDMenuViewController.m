@@ -88,17 +88,24 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *identifier = self.menuItems[indexPath.row][@"navControllerID"];    
-    MDSlidingNavigationController *newTopNavController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
+    NSDictionary *menuItem = self.menuItems[indexPath.row];
+    Class NewTopViewControllerClass = NSClassFromString(menuItem[@"viewController"]);
     
-    [self.slidingViewController anchorTopViewOffScreenTo:ECRight
-                                              animations:nil
-                                              onComplete:^{
-                                                  CGRect frame = self.slidingViewController.topViewController.view.frame;
-                                                  self.slidingViewController.topViewController = newTopNavController;
-                                                  self.slidingViewController.topViewController.view.frame = frame;
-                                                  [self.slidingViewController resetTopView];
-                                              }];
+    if (NewTopViewControllerClass) {
+        UIViewController *newTopViewController = [[NewTopViewControllerClass alloc] init];
+        
+        MDSlidingNavigationController *newTopNavController = [[MDSlidingNavigationController alloc]
+                                                              initWithRootViewController:newTopViewController];
+        
+        [self.slidingViewController anchorTopViewOffScreenTo:ECRight
+                                                  animations:nil
+                                                  onComplete:^{
+                                                      CGRect frame = self.slidingViewController.topViewController.view.frame;
+                                                      self.slidingViewController.topViewController = newTopNavController;
+                                                      self.slidingViewController.topViewController.view.frame = frame;
+                                                      [self.slidingViewController resetTopView];
+                                                  }];
+    }    
 }
 
 @end

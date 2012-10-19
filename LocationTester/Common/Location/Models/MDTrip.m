@@ -14,6 +14,7 @@
 
 @dynamic tripStartTime;
 @dynamic tripEndTime;
+@dynamic name;
 @dynamic locations;
 
 @end
