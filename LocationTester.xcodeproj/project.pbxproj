@@ -57,6 +57,8 @@
 		15BC8E01163181D900937CE9 /* MDMapPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BC8DFD163181D900937CE9 /* MDMapPoint.m */; };
 		15BC8E02163181D900937CE9 /* MDTrip.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BC8DFF163181D900937CE9 /* MDTrip.m */; };
 		15BC8E05163181F600937CE9 /* LocationTester.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15BC8E03163181F600937CE9 /* LocationTester.xcdatamodeld */; };
+		15FED0B11631B6980086DFB9 /* CrumbPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FED0AE1631B6980086DFB9 /* CrumbPath.m */; };
+		15FED0B21631B6980086DFB9 /* CrumbPathView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FED0B01631B6980086DFB9 /* CrumbPathView.m */; };
 		7092F8438A6044278DEBA08F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7143704226464E8C9523D899 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -140,6 +142,10 @@
 		15BC8DFF163181D900937CE9 /* MDTrip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTrip.m; sourceTree = "<group>"; };
 		15BC8E04163181F600937CE9 /* LocationTester.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LocationTester.xcdatamodel; sourceTree = "<group>"; };
 		15BC8E061631983F00937CE9 /* MDUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDUtils.h; sourceTree = "<group>"; };
+		15FED0AD1631B6980086DFB9 /* CrumbPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrumbPath.h; sourceTree = "<group>"; };
+		15FED0AE1631B6980086DFB9 /* CrumbPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrumbPath.m; sourceTree = "<group>"; };
+		15FED0AF1631B6980086DFB9 /* CrumbPathView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrumbPathView.h; sourceTree = "<group>"; };
+		15FED0B01631B6980086DFB9 /* CrumbPathView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrumbPathView.m; sourceTree = "<group>"; };
 		7143704226464E8C9523D899 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB7B6FAE88F949A0B5282598 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -398,6 +404,7 @@
 				15BC8DBE16313C6700937CE9 /* MDRecordTripViewController.xib */,
 				15BC8DC016313D7700937CE9 /* MDTripListViewController.xib */,
 				15BC8DC216313DE400937CE9 /* MDTripInfoViewController.xib */,
+				15FED0AC1631B6980086DFB9 /* MapOverlay */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -432,6 +439,17 @@
 				15BC8DFF163181D900937CE9 /* MDTrip.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		15FED0AC1631B6980086DFB9 /* MapOverlay */ = {
+			isa = PBXGroup;
+			children = (
+				15FED0AD1631B6980086DFB9 /* CrumbPath.h */,
+				15FED0AE1631B6980086DFB9 /* CrumbPath.m */,
+				15FED0AF1631B6980086DFB9 /* CrumbPathView.h */,
+				15FED0B01631B6980086DFB9 /* CrumbPathView.m */,
+			);
+			path = MapOverlay;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -593,6 +611,8 @@
 				15BC8E01163181D900937CE9 /* MDMapPoint.m in Sources */,
 				15BC8E02163181D900937CE9 /* MDTrip.m in Sources */,
 				15BC8E05163181F600937CE9 /* LocationTester.xcdatamodeld in Sources */,
+				15FED0B11631B6980086DFB9 /* CrumbPath.m in Sources */,
+				15FED0B21631B6980086DFB9 /* CrumbPathView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
