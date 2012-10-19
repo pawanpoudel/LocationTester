@@ -89,7 +89,7 @@
 
 - (void)useTripForReplay {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:self.trip.uniqueID forKey:@"uniqueIDOfChosenTrip"];
+    [defaults setObject:self.trip.uniqueID forKey:kMDUniqueIDOfTripToSimulate];
 }
 
 #pragma mark - Table View methods
