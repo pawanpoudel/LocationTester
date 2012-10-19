@@ -24,15 +24,10 @@
 		1598726C1630A8AF0039F4E5 /* LocationTesterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1598726B1630A8AF0039F4E5 /* LocationTesterTests.m */; };
 		159872921630AA5D0039F4E5 /* LocationTester.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1598727C1630AA5D0039F4E5 /* LocationTester.xcdatamodeld */; };
 		1598729C1630AA5D0039F4E5 /* MDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 159872911630AA5D0039F4E5 /* MDAppDelegate.m */; };
-		159872C91630AFAD0039F4E5 /* MainiPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 159872C71630AFAD0039F4E5 /* MainiPhone.storyboard */; };
-		159872CA1630AFAD0039F4E5 /* MainiPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 159872C81630AFAD0039F4E5 /* MainiPad.storyboard */; };
 		159872CC1630B2A10039F4E5 /* menuItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = 159872CB1630B2A10039F4E5 /* menuItems.plist */; };
 		159872CF1630B3980039F4E5 /* MDMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159872CE1630B3980039F4E5 /* MDMenuViewController.m */; };
 		159872D21630B3FA0039F4E5 /* MDInitialSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159872D11630B3F90039F4E5 /* MDInitialSlidingViewController.m */; };
 		159872D51630B44F0039F4E5 /* MDSlidingNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159872D41630B44F0039F4E5 /* MDSlidingNavigationController.m */; };
-		159872E61630BA200039F4E5 /* MDTestingToolsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159872E31630BA200039F4E5 /* MDTestingToolsViewController.m */; };
-		159872E71630BA200039F4E5 /* testingToolsRowItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = 159872E41630BA200039F4E5 /* testingToolsRowItems.plist */; };
-		159872E81630BA200039F4E5 /* testingToolsSectionItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = 159872E51630BA200039F4E5 /* testingToolsSectionItems.plist */; };
 		159872ED1630C45F0039F4E5 /* DebugLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 159872EC1630C45F0039F4E5 /* DebugLog.m */; };
 		159872FE1630D0D20039F4E5 /* MDDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 159872FD1630D0D20039F4E5 /* MDDataManager.m */; };
 		159873101630D35B0039F4E5 /* MDTrip.m in Sources */ = {isa = PBXBuildFile; fileRef = 1598730F1630D35B0039F4E5 /* MDTrip.m */; };
@@ -47,6 +42,16 @@
 		1598732F1630F0DA0039F4E5 /* bgMenuCellHighlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1598732B1630F0DA0039F4E5 /* bgMenuCellHighlighted@2x.png */; };
 		1598734C16310D1D0039F4E5 /* MDTripListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1598734B16310D1D0039F4E5 /* MDTripListViewController.m */; };
 		15987353163113370039F4E5 /* MDTripInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15987352163113370039F4E5 /* MDTripInfoViewController.m */; };
+		15987356163138840039F4E5 /* MDInitialSlidingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15987354163138830039F4E5 /* MDInitialSlidingViewController.xib */; };
+		15987357163138840039F4E5 /* MDMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15987355163138830039F4E5 /* MDMenuViewController.xib */; };
+		1598735A163139150039F4E5 /* MDLocateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15987359163139150039F4E5 /* MDLocateViewController.xib */; };
+		15BC8DB916313BC300937CE9 /* MDTestingToolsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BC8DB516313BC300937CE9 /* MDTestingToolsViewController.m */; };
+		15BC8DBA16313BC300937CE9 /* testingToolsRowItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = 15BC8DB616313BC300937CE9 /* testingToolsRowItems.plist */; };
+		15BC8DBB16313BC300937CE9 /* testingToolsSectionItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = 15BC8DB716313BC300937CE9 /* testingToolsSectionItems.plist */; };
+		15BC8DBD16313BDA00937CE9 /* MDTestingToolsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15BC8DBC16313BDA00937CE9 /* MDTestingToolsViewController.xib */; };
+		15BC8DBF16313C6700937CE9 /* MDRecordTripViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15BC8DBE16313C6700937CE9 /* MDRecordTripViewController.xib */; };
+		15BC8DC116313D7700937CE9 /* MDTripListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15BC8DC016313D7700937CE9 /* MDTripListViewController.xib */; };
+		15BC8DC316313DE400937CE9 /* MDTripInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15BC8DC216313DE400937CE9 /* MDTripInfoViewController.xib */; };
 		7092F8438A6044278DEBA08F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7143704226464E8C9523D899 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -82,8 +87,6 @@
 		1598727D1630AA5D0039F4E5 /* LocationTester.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LocationTester.xcdatamodel; sourceTree = "<group>"; };
 		159872901630AA5D0039F4E5 /* MDAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDAppDelegate.h; sourceTree = "<group>"; };
 		159872911630AA5D0039F4E5 /* MDAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDAppDelegate.m; sourceTree = "<group>"; };
-		159872C71630AFAD0039F4E5 /* MainiPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainiPhone.storyboard; sourceTree = "<group>"; };
-		159872C81630AFAD0039F4E5 /* MainiPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainiPad.storyboard; sourceTree = "<group>"; };
 		159872CB1630B2A10039F4E5 /* menuItems.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = menuItems.plist; sourceTree = "<group>"; };
 		159872CD1630B3980039F4E5 /* MDMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDMenuViewController.h; sourceTree = "<group>"; };
 		159872CE1630B3980039F4E5 /* MDMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDMenuViewController.m; sourceTree = "<group>"; };
@@ -91,10 +94,6 @@
 		159872D11630B3F90039F4E5 /* MDInitialSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDInitialSlidingViewController.m; sourceTree = "<group>"; };
 		159872D31630B44F0039F4E5 /* MDSlidingNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSlidingNavigationController.h; sourceTree = "<group>"; };
 		159872D41630B44F0039F4E5 /* MDSlidingNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSlidingNavigationController.m; sourceTree = "<group>"; };
-		159872E21630BA200039F4E5 /* MDTestingToolsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTestingToolsViewController.h; sourceTree = "<group>"; };
-		159872E31630BA200039F4E5 /* MDTestingToolsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTestingToolsViewController.m; sourceTree = "<group>"; };
-		159872E41630BA200039F4E5 /* testingToolsRowItems.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = testingToolsRowItems.plist; sourceTree = "<group>"; };
-		159872E51630BA200039F4E5 /* testingToolsSectionItems.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = testingToolsSectionItems.plist; sourceTree = "<group>"; };
 		159872EB1630C45F0039F4E5 /* DebugLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugLog.h; sourceTree = "<group>"; };
 		159872EC1630C45F0039F4E5 /* DebugLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebugLog.m; sourceTree = "<group>"; };
 		159872FC1630D0D20039F4E5 /* MDDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDDataManager.h; sourceTree = "<group>"; };
@@ -118,6 +117,17 @@
 		1598734B16310D1D0039F4E5 /* MDTripListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTripListViewController.m; sourceTree = "<group>"; };
 		15987351163113360039F4E5 /* MDTripInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTripInfoViewController.h; sourceTree = "<group>"; };
 		15987352163113370039F4E5 /* MDTripInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTripInfoViewController.m; sourceTree = "<group>"; };
+		15987354163138830039F4E5 /* MDInitialSlidingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDInitialSlidingViewController.xib; sourceTree = "<group>"; };
+		15987355163138830039F4E5 /* MDMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDMenuViewController.xib; sourceTree = "<group>"; };
+		15987359163139150039F4E5 /* MDLocateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDLocateViewController.xib; sourceTree = "<group>"; };
+		15BC8DB416313BC300937CE9 /* MDTestingToolsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTestingToolsViewController.h; sourceTree = "<group>"; };
+		15BC8DB516313BC300937CE9 /* MDTestingToolsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTestingToolsViewController.m; sourceTree = "<group>"; };
+		15BC8DB616313BC300937CE9 /* testingToolsRowItems.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = testingToolsRowItems.plist; sourceTree = "<group>"; };
+		15BC8DB716313BC300937CE9 /* testingToolsSectionItems.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = testingToolsSectionItems.plist; sourceTree = "<group>"; };
+		15BC8DBC16313BDA00937CE9 /* MDTestingToolsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDTestingToolsViewController.xib; sourceTree = "<group>"; };
+		15BC8DBE16313C6700937CE9 /* MDRecordTripViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDRecordTripViewController.xib; sourceTree = "<group>"; };
+		15BC8DC016313D7700937CE9 /* MDTripListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDTripListViewController.xib; sourceTree = "<group>"; };
+		15BC8DC216313DE400937CE9 /* MDTripInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDTripInfoViewController.xib; sourceTree = "<group>"; };
 		7143704226464E8C9523D899 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB7B6FAE88F949A0B5282598 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -289,8 +299,8 @@
 		159872BA1630AE8B0039F4E5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				159872C71630AFAD0039F4E5 /* MainiPhone.storyboard */,
-				159872C81630AFAD0039F4E5 /* MainiPad.storyboard */,
+				15987354163138830039F4E5 /* MDInitialSlidingViewController.xib */,
+				15987355163138830039F4E5 /* MDMenuViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -298,10 +308,8 @@
 		159872D91630BA000039F4E5 /* TestingTools */ = {
 			isa = PBXGroup;
 			children = (
-				159872E21630BA200039F4E5 /* MDTestingToolsViewController.h */,
-				159872E31630BA200039F4E5 /* MDTestingToolsViewController.m */,
-				159872E41630BA200039F4E5 /* testingToolsRowItems.plist */,
-				159872E51630BA200039F4E5 /* testingToolsSectionItems.plist */,
+				15BC8DB316313BC300937CE9 /* Controllers */,
+				15BC8DB816313BC300937CE9 /* Views */,
 			);
 			path = TestingTools;
 			sourceTree = "<group>";
@@ -327,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				159873151630D6E70039F4E5 /* Controllers */,
+				15987358163138FB0039F4E5 /* Views */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -373,6 +382,36 @@
 				1598732B1630F0DA0039F4E5 /* bgMenuCellHighlighted@2x.png */,
 			);
 			path = MainMenuAssets;
+			sourceTree = "<group>";
+		};
+		15987358163138FB0039F4E5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				15987359163139150039F4E5 /* MDLocateViewController.xib */,
+				15BC8DBE16313C6700937CE9 /* MDRecordTripViewController.xib */,
+				15BC8DC016313D7700937CE9 /* MDTripListViewController.xib */,
+				15BC8DC216313DE400937CE9 /* MDTripInfoViewController.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		15BC8DB316313BC300937CE9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				15BC8DB416313BC300937CE9 /* MDTestingToolsViewController.h */,
+				15BC8DB516313BC300937CE9 /* MDTestingToolsViewController.m */,
+				15BC8DB616313BC300937CE9 /* testingToolsRowItems.plist */,
+				15BC8DB716313BC300937CE9 /* testingToolsSectionItems.plist */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		15BC8DB816313BC300937CE9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				15BC8DBC16313BDA00937CE9 /* MDTestingToolsViewController.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -452,15 +491,20 @@
 				1598724F1630A8AE0039F4E5 /* Default.png in Resources */,
 				159872511630A8AE0039F4E5 /* Default@2x.png in Resources */,
 				159872531630A8AE0039F4E5 /* Default-568h@2x.png in Resources */,
-				159872C91630AFAD0039F4E5 /* MainiPhone.storyboard in Resources */,
-				159872CA1630AFAD0039F4E5 /* MainiPad.storyboard in Resources */,
 				159872CC1630B2A10039F4E5 /* menuItems.plist in Resources */,
-				159872E71630BA200039F4E5 /* testingToolsRowItems.plist in Resources */,
-				159872E81630BA200039F4E5 /* testingToolsSectionItems.plist in Resources */,
 				1598732C1630F0DA0039F4E5 /* bgMenuCell.png in Resources */,
 				1598732D1630F0DA0039F4E5 /* bgMenuCell@2x.png in Resources */,
 				1598732E1630F0DA0039F4E5 /* bgMenuCellHighlighted.png in Resources */,
 				1598732F1630F0DA0039F4E5 /* bgMenuCellHighlighted@2x.png in Resources */,
+				15987356163138840039F4E5 /* MDInitialSlidingViewController.xib in Resources */,
+				15987357163138840039F4E5 /* MDMenuViewController.xib in Resources */,
+				1598735A163139150039F4E5 /* MDLocateViewController.xib in Resources */,
+				15BC8DBA16313BC300937CE9 /* testingToolsRowItems.plist in Resources */,
+				15BC8DBB16313BC300937CE9 /* testingToolsSectionItems.plist in Resources */,
+				15BC8DBD16313BDA00937CE9 /* MDTestingToolsViewController.xib in Resources */,
+				15BC8DBF16313C6700937CE9 /* MDRecordTripViewController.xib in Resources */,
+				15BC8DC116313D7700937CE9 /* MDTripListViewController.xib in Resources */,
+				15BC8DC316313DE400937CE9 /* MDTripInfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,7 +559,6 @@
 				159872CF1630B3980039F4E5 /* MDMenuViewController.m in Sources */,
 				159872D21630B3FA0039F4E5 /* MDInitialSlidingViewController.m in Sources */,
 				159872D51630B44F0039F4E5 /* MDSlidingNavigationController.m in Sources */,
-				159872E61630BA200039F4E5 /* MDTestingToolsViewController.m in Sources */,
 				159872ED1630C45F0039F4E5 /* DebugLog.m in Sources */,
 				159872FE1630D0D20039F4E5 /* MDDataManager.m in Sources */,
 				159873101630D35B0039F4E5 /* MDTrip.m in Sources */,
@@ -525,6 +568,7 @@
 				159873241630E6D60039F4E5 /* MDRecordTripViewController.m in Sources */,
 				1598734C16310D1D0039F4E5 /* MDTripListViewController.m in Sources */,
 				15987353163113370039F4E5 /* MDTripInfoViewController.m in Sources */,
+				15BC8DB916313BC300937CE9 /* MDTestingToolsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,7 +668,7 @@
 				INFOPLIST_FILE = "LocationTester/LocationTester-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -638,7 +682,7 @@
 				INFOPLIST_FILE = "LocationTester/LocationTester-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

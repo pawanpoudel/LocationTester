@@ -238,7 +238,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     }
     
     // Create and push a trip info view controller.
-    MDTripInfoViewController *tripInfoViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MDTripInfoViewController"];
+    MDTripInfoViewController *tripInfoViewController = [[MDTripInfoViewController alloc] init];
     tripInfoViewController.trip = selectedTrip;
     [self.navigationController pushViewController:tripInfoViewController animated:YES];
     

@@ -45,6 +45,17 @@
 
 #pragma mark - View lifecycle
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    // Add menu button
+    UIBarButtonItem *navButton = [[UIBarButtonItem alloc] initWithTitle:@"Menu"
+                                                                  style:UIBarButtonItemStyleBordered
+                                                                 target:self
+                                                                 action:@selector(revealMenu:)];
+    self.navigationItem.leftBarButtonItem = navButton;    
+}
+
 - (void)viewDidUnload {
     [self setRowItems:nil];
     [self setSectionItems:nil];
@@ -60,12 +71,12 @@
 }
 
 - (void)showViewForRecordingTrip {
-    MDRecordTripViewController *tripViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MDRecordTripViewController"];
-    [self.navigationController pushViewController:tripViewController animated:YES];
+    MDRecordTripViewController *recordTripViewController = [[MDRecordTripViewController alloc] init];
+    [self.navigationController pushViewController:recordTripViewController animated:YES];
 }
 
 - (void)showTripList {
-    MDTripListViewController *tripListViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MDTripListViewController"];
+    MDTripListViewController *tripListViewController = [[MDTripListViewController alloc] init];
     [self.navigationController pushViewController:tripListViewController animated:YES];
 }
 

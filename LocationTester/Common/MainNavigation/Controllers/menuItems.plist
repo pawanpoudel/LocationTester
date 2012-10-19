@@ -7,16 +7,16 @@
 		<string></string>
 		<key>text</key>
 		<string>Locate</string>
-		<key>navControllerID</key>
-		<string>MDLocateNavController</string>
+		<key>viewController</key>
+		<string>MDLocateViewController</string>
 	</dict>
 	<dict>
 		<key>imageName</key>
 		<string></string>
 		<key>text</key>
 		<string>Testing Tools</string>
-		<key>navControllerID</key>
-		<string>MDTestingToolsNavController</string>
+		<key>viewController</key>
+		<string>MDTestingToolsViewController</string>
 	</dict>
 </array>
 </plist>

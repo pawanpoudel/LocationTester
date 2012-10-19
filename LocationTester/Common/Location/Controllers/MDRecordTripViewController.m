@@ -148,7 +148,7 @@
 }
 
 - (void)locationManagerDidStopRecordingTrip:(MDLocationManager *)locationManager {
-    self.latLongLabel.text = @"Lat & Long will be displayed here.";
+    self.latLongLabel.text = @"Latitude, longitude and horizontal accuracy will be displayed here.";
 }
 
 - (void)locationManager:(MDLocationManager *)locationManager didFailWithError:(NSError *)error {
