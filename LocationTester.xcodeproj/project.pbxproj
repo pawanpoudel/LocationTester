@@ -40,6 +40,11 @@
 		159873181630D6E70039F4E5 /* MDLocateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159873171630D6E70039F4E5 /* MDLocateViewController.m */; };
 		1598731E1630D8E10039F4E5 /* MDLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1598731D1630D8E10039F4E5 /* MDLocationManager.m */; };
 		159873201630DD0E0039F4E5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1598731F1630DD0D0039F4E5 /* CoreLocation.framework */; };
+		159873241630E6D60039F4E5 /* MDTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159873231630E6D60039F4E5 /* MDTripViewController.m */; };
+		1598732C1630F0DA0039F4E5 /* bgMenuCell.png in Resources */ = {isa = PBXBuildFile; fileRef = 159873281630F0DA0039F4E5 /* bgMenuCell.png */; };
+		1598732D1630F0DA0039F4E5 /* bgMenuCell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 159873291630F0DA0039F4E5 /* bgMenuCell@2x.png */; };
+		1598732E1630F0DA0039F4E5 /* bgMenuCellHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 1598732A1630F0DA0039F4E5 /* bgMenuCellHighlighted.png */; };
+		1598732F1630F0DA0039F4E5 /* bgMenuCellHighlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1598732B1630F0DA0039F4E5 /* bgMenuCellHighlighted@2x.png */; };
 		7092F8438A6044278DEBA08F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7143704226464E8C9523D899 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +106,12 @@
 		1598731C1630D8E10039F4E5 /* MDLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDLocationManager.h; sourceTree = "<group>"; };
 		1598731D1630D8E10039F4E5 /* MDLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDLocationManager.m; sourceTree = "<group>"; };
 		1598731F1630DD0D0039F4E5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		159873221630E6D60039F4E5 /* MDTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTripViewController.h; sourceTree = "<group>"; };
+		159873231630E6D60039F4E5 /* MDTripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTripViewController.m; sourceTree = "<group>"; };
+		159873281630F0DA0039F4E5 /* bgMenuCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgMenuCell.png; sourceTree = "<group>"; };
+		159873291630F0DA0039F4E5 /* bgMenuCell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bgMenuCell@2x.png"; sourceTree = "<group>"; };
+		1598732A1630F0DA0039F4E5 /* bgMenuCellHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgMenuCellHighlighted.png; sourceTree = "<group>"; };
+		1598732B1630F0DA0039F4E5 /* bgMenuCellHighlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bgMenuCellHighlighted@2x.png"; sourceTree = "<group>"; };
 		7143704226464E8C9523D899 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB7B6FAE88F949A0B5282598 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -214,10 +225,11 @@
 			children = (
 				159872901630AA5D0039F4E5 /* MDAppDelegate.h */,
 				159872911630AA5D0039F4E5 /* MDAppDelegate.m */,
+				1598727A1630AA5D0039F4E5 /* DataLayer */,
+				159873251630F0D80039F4E5 /* Resources */,
 				159873141630D6E60039F4E5 /* Location */,
 				159872E91630C45E0039F4E5 /* Utils */,
 				159872D91630BA000039F4E5 /* TestingTools */,
-				1598727A1630AA5D0039F4E5 /* DataLayer */,
 				1598727E1630AA5D0039F4E5 /* MainNavigation */,
 			);
 			path = Common;
@@ -320,8 +332,37 @@
 				159873171630D6E70039F4E5 /* MDLocateViewController.m */,
 				1598731C1630D8E10039F4E5 /* MDLocationManager.h */,
 				1598731D1630D8E10039F4E5 /* MDLocationManager.m */,
+				159873221630E6D60039F4E5 /* MDTripViewController.h */,
+				159873231630E6D60039F4E5 /* MDTripViewController.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		159873251630F0D80039F4E5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				159873261630F0DA0039F4E5 /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		159873261630F0DA0039F4E5 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				159873271630F0DA0039F4E5 /* MainMenuAssets */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		159873271630F0DA0039F4E5 /* MainMenuAssets */ = {
+			isa = PBXGroup;
+			children = (
+				159873281630F0DA0039F4E5 /* bgMenuCell.png */,
+				159873291630F0DA0039F4E5 /* bgMenuCell@2x.png */,
+				1598732A1630F0DA0039F4E5 /* bgMenuCellHighlighted.png */,
+				1598732B1630F0DA0039F4E5 /* bgMenuCellHighlighted@2x.png */,
+			);
+			path = MainMenuAssets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,6 +447,10 @@
 				159872CC1630B2A10039F4E5 /* menuItems.plist in Resources */,
 				159872E71630BA200039F4E5 /* testingToolsRowItems.plist in Resources */,
 				159872E81630BA200039F4E5 /* testingToolsSectionItems.plist in Resources */,
+				1598732C1630F0DA0039F4E5 /* bgMenuCell.png in Resources */,
+				1598732D1630F0DA0039F4E5 /* bgMenuCell@2x.png in Resources */,
+				1598732E1630F0DA0039F4E5 /* bgMenuCellHighlighted.png in Resources */,
+				1598732F1630F0DA0039F4E5 /* bgMenuCellHighlighted@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +512,7 @@
 				159873131630D3650039F4E5 /* MDLocation.m in Sources */,
 				159873181630D6E70039F4E5 /* MDLocateViewController.m in Sources */,
 				1598731E1630D8E10039F4E5 /* MDLocationManager.m in Sources */,
+				159873241630E6D60039F4E5 /* MDTripViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,7 +610,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LocationTester/LocationTester-Prefix.pch";
 				INFOPLIST_FILE = "LocationTester/LocationTester-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -578,7 +624,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LocationTester/LocationTester-Prefix.pch";
 				INFOPLIST_FILE = "LocationTester/LocationTester-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
