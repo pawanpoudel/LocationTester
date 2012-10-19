@@ -40,11 +40,13 @@
 		159873181630D6E70039F4E5 /* MDLocateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159873171630D6E70039F4E5 /* MDLocateViewController.m */; };
 		1598731E1630D8E10039F4E5 /* MDLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1598731D1630D8E10039F4E5 /* MDLocationManager.m */; };
 		159873201630DD0E0039F4E5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1598731F1630DD0D0039F4E5 /* CoreLocation.framework */; };
-		159873241630E6D60039F4E5 /* MDTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159873231630E6D60039F4E5 /* MDTripViewController.m */; };
+		159873241630E6D60039F4E5 /* MDRecordTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159873231630E6D60039F4E5 /* MDRecordTripViewController.m */; };
 		1598732C1630F0DA0039F4E5 /* bgMenuCell.png in Resources */ = {isa = PBXBuildFile; fileRef = 159873281630F0DA0039F4E5 /* bgMenuCell.png */; };
 		1598732D1630F0DA0039F4E5 /* bgMenuCell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 159873291630F0DA0039F4E5 /* bgMenuCell@2x.png */; };
 		1598732E1630F0DA0039F4E5 /* bgMenuCellHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 1598732A1630F0DA0039F4E5 /* bgMenuCellHighlighted.png */; };
 		1598732F1630F0DA0039F4E5 /* bgMenuCellHighlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1598732B1630F0DA0039F4E5 /* bgMenuCellHighlighted@2x.png */; };
+		1598734C16310D1D0039F4E5 /* MDTripListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1598734B16310D1D0039F4E5 /* MDTripListViewController.m */; };
+		15987353163113370039F4E5 /* MDTripInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15987352163113370039F4E5 /* MDTripInfoViewController.m */; };
 		7092F8438A6044278DEBA08F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7143704226464E8C9523D899 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -106,12 +108,16 @@
 		1598731C1630D8E10039F4E5 /* MDLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDLocationManager.h; sourceTree = "<group>"; };
 		1598731D1630D8E10039F4E5 /* MDLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDLocationManager.m; sourceTree = "<group>"; };
 		1598731F1630DD0D0039F4E5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		159873221630E6D60039F4E5 /* MDTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTripViewController.h; sourceTree = "<group>"; };
-		159873231630E6D60039F4E5 /* MDTripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTripViewController.m; sourceTree = "<group>"; };
+		159873221630E6D60039F4E5 /* MDRecordTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRecordTripViewController.h; sourceTree = "<group>"; };
+		159873231630E6D60039F4E5 /* MDRecordTripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRecordTripViewController.m; sourceTree = "<group>"; };
 		159873281630F0DA0039F4E5 /* bgMenuCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgMenuCell.png; sourceTree = "<group>"; };
 		159873291630F0DA0039F4E5 /* bgMenuCell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bgMenuCell@2x.png"; sourceTree = "<group>"; };
 		1598732A1630F0DA0039F4E5 /* bgMenuCellHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgMenuCellHighlighted.png; sourceTree = "<group>"; };
 		1598732B1630F0DA0039F4E5 /* bgMenuCellHighlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bgMenuCellHighlighted@2x.png"; sourceTree = "<group>"; };
+		1598734A16310D1D0039F4E5 /* MDTripListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTripListViewController.h; sourceTree = "<group>"; };
+		1598734B16310D1D0039F4E5 /* MDTripListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTripListViewController.m; sourceTree = "<group>"; };
+		15987351163113360039F4E5 /* MDTripInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTripInfoViewController.h; sourceTree = "<group>"; };
+		15987352163113370039F4E5 /* MDTripInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTripInfoViewController.m; sourceTree = "<group>"; };
 		7143704226464E8C9523D899 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB7B6FAE88F949A0B5282598 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -332,8 +338,12 @@
 				159873171630D6E70039F4E5 /* MDLocateViewController.m */,
 				1598731C1630D8E10039F4E5 /* MDLocationManager.h */,
 				1598731D1630D8E10039F4E5 /* MDLocationManager.m */,
-				159873221630E6D60039F4E5 /* MDTripViewController.h */,
-				159873231630E6D60039F4E5 /* MDTripViewController.m */,
+				159873221630E6D60039F4E5 /* MDRecordTripViewController.h */,
+				159873231630E6D60039F4E5 /* MDRecordTripViewController.m */,
+				1598734A16310D1D0039F4E5 /* MDTripListViewController.h */,
+				1598734B16310D1D0039F4E5 /* MDTripListViewController.m */,
+				15987351163113360039F4E5 /* MDTripInfoViewController.h */,
+				15987352163113370039F4E5 /* MDTripInfoViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -512,7 +522,9 @@
 				159873131630D3650039F4E5 /* MDLocation.m in Sources */,
 				159873181630D6E70039F4E5 /* MDLocateViewController.m in Sources */,
 				1598731E1630D8E10039F4E5 /* MDLocationManager.m in Sources */,
-				159873241630E6D60039F4E5 /* MDTripViewController.m in Sources */,
+				159873241630E6D60039F4E5 /* MDRecordTripViewController.m in Sources */,
+				1598734C16310D1D0039F4E5 /* MDTripListViewController.m in Sources */,
+				15987353163113370039F4E5 /* MDTripInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
