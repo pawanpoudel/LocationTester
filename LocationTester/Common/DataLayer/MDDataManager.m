@@ -70,6 +70,17 @@
     return trips;
 }
 
+- (MDTrip *)fetchTripWithID:(NSString *)tripID {
+    NSArray *allTrips = [self fetchTrips];
+    for (MDTrip *trip in allTrips) {
+        if ([trip.uniqueID isEqualToString:tripID]) {
+            return trip;
+        }
+    }
+    
+    return nil;
+}
+
 #pragma mark - Delete operations
 
 - (NSString *)getFilePathForTrip:(MDTrip *)trip {

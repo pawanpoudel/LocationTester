@@ -22,6 +22,8 @@
 - (MDTrip *)createTripEntity;
 
 - (NSArray *)fetchTrips;
+- (MDTrip *)fetchTripWithID:(NSString *)tripID;
+
 - (void)deleteTrips;
 
 @end
