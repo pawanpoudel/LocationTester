@@ -139,6 +139,7 @@
 		15BC8DFE163181D900937CE9 /* MDTrip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTrip.h; sourceTree = "<group>"; };
 		15BC8DFF163181D900937CE9 /* MDTrip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTrip.m; sourceTree = "<group>"; };
 		15BC8E04163181F600937CE9 /* LocationTester.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LocationTester.xcdatamodel; sourceTree = "<group>"; };
+		15BC8E061631983F00937CE9 /* MDUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDUtils.h; sourceTree = "<group>"; };
 		7143704226464E8C9523D899 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB7B6FAE88F949A0B5282598 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -318,6 +319,7 @@
 		159872E91630C45E0039F4E5 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				15BC8E061631983F00937CE9 /* MDUtils.h */,
 				159872EA1630C45F0039F4E5 /* Logging */,
 			);
 			path = Utils;

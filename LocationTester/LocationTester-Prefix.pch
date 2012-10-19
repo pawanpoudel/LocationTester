@@ -13,5 +13,7 @@
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
     #import "DebugLog.h"
+    #import "MDUtils.h"
     #import "ECSlidingViewController.h"
+    #import "MDAppDelegate.h"
 #endif
