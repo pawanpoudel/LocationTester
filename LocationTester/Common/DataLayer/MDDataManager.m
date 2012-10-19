@@ -47,7 +47,7 @@
     return [NSEntityDescription insertNewObjectForEntityForName:@"MDLocation" inManagedObjectContext:self.managedObjectContext];
 }
 
-- (MDTrip *)createLocationTripEntity {
+- (MDTrip *)createTripEntity {
     return [NSEntityDescription insertNewObjectForEntityForName:@"MDTrip" inManagedObjectContext:self.managedObjectContext];
 }
 
