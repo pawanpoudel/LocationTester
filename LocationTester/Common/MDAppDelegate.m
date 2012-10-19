@@ -5,6 +5,8 @@
 //  Created by PAWAN POUDEL on 10/18/12.
 //  Copyright (c) 2012 Mobile Defense Inc. All rights reserved.
 //
+//  Note: This app uses ECSlidingViewController library (https://github.com/edgecase/ecslidingviewcontroller)
+//  for main app navigation. Thank you EdgeCase!
 
 #import "MDAppDelegate.h"
 #import "MDInitialSlidingViewController.h"
